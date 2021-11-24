@@ -24,11 +24,11 @@ public class MyModel implements Contract.Model{
                             String un = "";
                             String pw = "";
                             try{
-                                Log.i("console", "null task");
-                            }
-                            catch(Exception e){
                                 un = task.getResult().child("username").getValue().toString();
                                 pw = task.getResult().child("password").getValue().toString();
+                            }
+                            catch(Exception e){
+                                Log.i("console", "null task");
                             }
                             Log.i("console", un);
                             // checks if user and password is valid
