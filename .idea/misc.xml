@@ -3,20 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/bg_button.xml" value="0.3921875" />
-        <entry key="app/src/main/res/drawable/et_custom.xml" value="0.2421875" />
-        <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_customer_main.xml" value="0.33645833333333336" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/layout.xml" value="0.22604166666666667" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/Gruber_Logo.xml" value="0.22916666666666666" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/Gruber_Logo_round.xml" value="0.22916666666666666" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber.xml" value="0.3921875" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber_Logo.xml" value="0.240625" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/drawable/bg_button.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/drawable/et_custom.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2922323591504004" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber_round.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21770833333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
