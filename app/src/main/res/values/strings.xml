@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Grüber</string>
     <string name="login_button_text">Login</string>
+    <string name="create_account">Create an Account</string>
 </resources>

@@ -3,20 +3,21 @@ package com.example.gproject;
 import java.util.ArrayList;
 
 public class Order {
-    ArrayList<Product> products;
+    ArrayList<Product> cart_products;
     Owner owner;
 
     public Order(Owner owner){
-        this.products = new ArrayList<Product>();
+        this.cart_products = new ArrayList<Product>();
         this.owner = owner;
     }
 
     public void addProduct(Product p){
-        products.add(p);
+        //Check if p is in owner.product first
+        cart_products.add(p);
     }
 
     public void removeProduct(Product p){
-        products.remove(p);
+        cart_products.remove(p);
     }
 
     public void removeProduct(Product product, int amount){
@@ -24,6 +25,6 @@ public class Order {
 
     public void checkOut(Customer c){
         // some database code to checkout the order
-        products.clear();
+        cart_products.clear();
     }
 }

@@ -1,6 +1,10 @@
 package com.example.gproject;
 
+import java.util.ArrayList;
+
 public class Owner extends User {
+    ArrayList<Product> shop_products;
+    ArrayList<Order> customer_order;
     String store_name;
     String location;
 

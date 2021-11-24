@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity implements Contract.View{
 
     private Contract.Presenter presenter;
@@ -26,10 +29,15 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
         return editText.getText().toString();
     }
 
-    public void handleClick(View view){
 
+    public void handleLoginClick(View view){
         presenter.checkLoginCredentials();
     }
+
+    public void handleCreateAccountClick(View view){
+        presenter.checkLoginCredentials();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

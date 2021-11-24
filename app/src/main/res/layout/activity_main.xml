@@ -43,9 +43,10 @@
 
     <Button
         android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="handleClick"
+        android:onClick="handleLoginClick"
         android:text="@string/login_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,5 +75,22 @@
         app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="440dp" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="255dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#4CAF50"
+        android:onClick="handleCreateAccountClick"
+        android:text="@string/create_account"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
