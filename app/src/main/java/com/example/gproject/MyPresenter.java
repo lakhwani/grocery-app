@@ -1,5 +1,7 @@
 package com.example.gproject;
 
+import android.content.Intent;
+
 public class MyPresenter implements Contract.Presenter{
     private Contract.Model model;
     private Contract.View view;
@@ -18,8 +20,8 @@ public class MyPresenter implements Contract.Presenter{
             model.checkValidUserCredentials(username, password, this);
     }
 
-    public void onValidCredentials(String m){
-        view.displayMessage("VALID login! " + m);
+    public void onValidCredentials(Customer c){
+        view.displayMessage("VALID login! " + c.getEmail());
     }
 
     public void onInvalidCredentials(String m){

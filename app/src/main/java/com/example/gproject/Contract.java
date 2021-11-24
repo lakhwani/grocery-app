@@ -3,7 +3,6 @@ package com.example.gproject;
 public interface Contract {
     public interface Model{
         public void checkValidUserCredentials(String username, String password, Contract.Presenter presenter);
-        public boolean validPassword(String username);
     }
 
     public interface View{
@@ -14,7 +13,7 @@ public interface Contract {
 
     public interface Presenter{
         public void checkLoginCredentials();
-        public void onValidCredentials(String m);
+        public void onValidCredentials(Customer c);
         public void onInvalidCredentials(String m);
     }
 }

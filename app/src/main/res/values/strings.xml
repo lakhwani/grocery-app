@@ -4,4 +4,7 @@
     <string name="create_account">Create an Account</string>
     <string name="login_title">Welcome to Grüber.</string>
     <string name="login_phrase">Grocery at your finger tips!</string>
+    <string name="create_account_title">Register</string>
+    <string name="create_account_phrase">Register as a customer or a store owner.</string>
+    <string name="create_account_button_text">Register</string>
 </resources>

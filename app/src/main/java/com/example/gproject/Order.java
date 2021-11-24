@@ -6,6 +6,22 @@ public class Order {
     ArrayList<Product> cart_products;
     Owner owner;
 
+    public ArrayList<Product> getCart_products() {
+        return cart_products;
+    }
+
+    public void setCart_products(ArrayList<Product> cart_products) {
+        this.cart_products = cart_products;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     public Order(Owner owner){
         this.cart_products = new ArrayList<Product>();
         this.owner = owner;

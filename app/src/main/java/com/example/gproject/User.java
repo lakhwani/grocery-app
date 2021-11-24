@@ -19,6 +19,10 @@ public class User {
         this.id = id;
     }
 
+    public User() {
+
+    }
+
     public void setEmail(String email) {
         //Check if the email is already in database or not
         this.email = email;

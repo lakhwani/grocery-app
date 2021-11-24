@@ -12,6 +12,40 @@ public class Owner extends User {
         super(username, password, email, id, firstName, lastName);
         this.store_name = store_name;
         this.location = location;
+
+        this.shop_products = new ArrayList<Product>();
+        this.customer_order = new ArrayList<Order>();
     }
 
+    public ArrayList<Product> getShop_products() {
+        return shop_products;
+    }
+
+    public void setShop_products(ArrayList<Product> shop_products) {
+        this.shop_products = shop_products;
+    }
+
+    public ArrayList<Order> getCustomer_order() {
+        return customer_order;
+    }
+
+    public void setCustomer_order(ArrayList<Order> customer_order) {
+        this.customer_order = customer_order;
+    }
+
+    public String getStore_name() {
+        return store_name;
+    }
+
+    public void setStore_name(String store_name) {
+        this.store_name = store_name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

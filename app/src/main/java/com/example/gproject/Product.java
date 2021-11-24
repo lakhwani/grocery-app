@@ -11,6 +11,22 @@ public class Product {
         this.amount = amount;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
     public void setAmount(int amount){
         this.amount = amount;
     }
@@ -18,4 +34,5 @@ public class Product {
     public int getAmount(){
         return amount;
     }
+
 }
