@@ -6,13 +6,11 @@ public interface Contract {
     }
 
     public interface View{
-        public String getUsername();
-        public String getPassword();
         public void displayMessage(String message);
     }
 
     public interface Presenter{
-        public void checkLoginCredentials();
+        public void checkLoginCredentials(String username, String password);
         public void onValidCredentials(Customer c);
         public void onInvalidCredentials(String m);
     }

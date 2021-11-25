@@ -11,9 +11,7 @@ public class MyPresenter implements Contract.Presenter{
         this.view = view;
     }
 
-    public void checkLoginCredentials() {
-        String username = view.getUsername();
-        String password = view.getPassword();
+    public void checkLoginCredentials(String username, String password) {
         if(username.equals(""))
             view.displayMessage("username cannot be empty");
         else

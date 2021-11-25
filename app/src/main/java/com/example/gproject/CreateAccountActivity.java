@@ -2,13 +2,17 @@ package com.example.gproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-public class CreateAccountActivity extends AppCompatActivity {
-
+public class CreateAccountActivity extends AppCompatActivity implements Contract.View{
     public void goBack(View v) {
         onBackPressed();
     }
@@ -25,11 +29,48 @@ public class CreateAccountActivity extends AppCompatActivity {
         dropdown.setAdapter(adapter);
     }
 
+    public void displayMessage(String message){
+        TextView textView = findViewById(R.id.create_account_debugView);
+        textView.setText(message);
+    }
+
+    public void wrongInputShake(EditText et){
+        Animation example= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+        et.startAnimation(example);
+    }
+
+    public void onRegister(View v){
+        EditText caf = findViewById(R.id.create_account_firstname);
+        EditText cal = findViewById(R.id.create_account_lastname);
+        EditText cae = findViewById(R.id.create_account_email);
+        EditText cau = findViewById(R.id.create_account_username);
+        EditText cap = findViewById(R.id.create_account_password);
+        Spinner cs = findViewById(R.id.choice_spinner);
+
+        String af = caf.getText().toString();
+        String al = cal.getText().toString();
+        String ae = cae.getText().toString();
+        String au = cau.getText().toString();
+        String ap = cap.getText().toString();
+
+        // add regex stuff, if any of these regexes are not satisfied, user is not created
+        if(af.equals("") || al.equals("") || ae.equals("") || au.equals("") || ap.equals("")){
+            // display message that says "smth cannot be blank"
+            displayMessage("input cannot be blank!");
+        }
+        else{
+            String type = cs.getSelectedItem().toString().toLowerCase() + "s";
+            User u = new User(au, ap, ae, 0, af, al);
+            DBModel.searchUserAndEmailExists(type, u, this); // searches if user and email exists, then if not, creates the user
+        }
+
+        //onBackPressed(); // could also send message back to login page to say account has been created
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
         setSpinnerValues();
-
     }
 }

@@ -1,8 +1,9 @@
 package com.example.gproject;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
     private String username;//unique
     private String password;
     private String email;//unique

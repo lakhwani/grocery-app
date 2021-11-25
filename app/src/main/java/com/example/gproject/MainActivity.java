@@ -8,11 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity implements Contract.View{
 
     private Contract.Presenter presenter;
@@ -23,18 +18,10 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
         textView.setText(message);
     }
 
-    public String getUsername(){
-        EditText editText = findViewById(R.id.login_username);
-        return editText.getText().toString();
-    }
-
-    public String getPassword() {
-        EditText editText = findViewById(R.id.login_password);
-        return editText.getText().toString();
-    }
-
     public void handleLoginClick(View view){
-        presenter.checkLoginCredentials();
+        EditText lu = findViewById(R.id.login_username);
+        EditText lp = findViewById(R.id.login_password);
+        presenter.checkLoginCredentials(lu.getText().toString(), lp.getText().toString());
     }
 
     public void handleCreateAccountClick(View view){
@@ -48,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter = new MyPresenter(new MyModel(), this);
+        presenter = new MyPresenter(new DBModel(), this);
     }
 
 
