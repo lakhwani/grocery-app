@@ -53,24 +53,6 @@ public class DBModel implements Contract.Model{
             }
         });
     }
-//    static boolean b = false;
-//    public static void searchUserAndEmailExists(String type_of_user, User u, Contract.View v){
-//        DatabaseReference ref= db.getReference();
-//        ref.orderByChild("username").equalTo(u.getUsername())
-//                .addValueEventListener(new ValueEventListener(){
-//                                           @Override
-//                                           public void onDataChange(DataSnapshot dataSnapshot){
-//                                               if(dataSnapshot.exists()){
-//                                                   Log.i("console", dataSnapshot.getValue().toString());
-//                                                   b=true;
-//                                               }
-//                                           }
-//
-//                                           @Override
-//                                           public void onCancelled(@NonNull DatabaseError error) { }
-//
-//                });
-//    }
 
     public static void searchUserAndEmailExists(String type_of_user, User u, Contract.View v){
         DatabaseReference ref= db.getReference();
@@ -119,64 +101,6 @@ public class DBModel implements Contract.Model{
         });
     }
 
-//    public static void searchUserAndEmailExists(String type_of_user, User u, Contract.View v){
-//        db.getReference()
-//                .addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//                        boolean b = false;
-//                        // loops through child of default reference
-//                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                            Log.i("console",snapshot.getValue().toString());
-//                            Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
-//                            try{
-//                                for(Object user_info: map.values()){
-//                                    String user_info_string = user_info.toString();
-////                                    if(user_info_string.contains()){
-////                                        Log.i("console","found username");
-////    //                                    v.displayMessage("This username already exists.");
-////                                        b = true;
-////                                    }
-////                                    if(user.getEmail().equals(u.getEmail())){
-////                                        Log.i("console","found email");
-////    //                                    v.displayMessage("This email already exists.");
-////                                        b = true;
-////                                    }
-//
-//                                    Log.i("console", user_info_string);
-//                                    Log.i("console", user_info.getClass().toString());
-//                                }
-//                            }
-//                            catch(Exception e){
-//                                Log.i("console", e.toString());
-//                            }
-//
-//                            // then loops through child of customers/owners
-////                            for(Object snap_shot_user: map.values()){
-//////                                User user = snapshot.getValue(User.class);
-////                                User user = (User) snap_shot_user;
-////                                if(user.getUsername().equals(u.getUsername())){
-////                                    Log.i("console","found username");
-//////                                    v.displayMessage("This username already exists.");
-////                                    b = true;
-////                                }
-////                                if(user.getEmail().equals(u.getEmail())){
-////                                    Log.i("console","found email");
-//////                                    v.displayMessage("This email already exists.");
-////                                    b = true;
-////                                }
-////                            }
-//                        }
-////                        if(!b){
-////                            Log.i("console","CREATED!: " + type_of_user + " " + u.getUsername());
-////                            DBModel.createUser(type_of_user,u);
-////                        }
-//                    }
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//                    }
-//                });
-//    }
 
     public static void createUser(String type_of_user, User u){
         // type of user can only be either "customers" or "owners"
