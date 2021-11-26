@@ -13,7 +13,7 @@ public class Customer extends User implements Serializable {
         super(username, password, email, id, firstName, lastName);
     }
 
-    public void createOrder(Owner owner){
+    public void createOrder(String owner){
         this.order = new Order(owner);
     }
 

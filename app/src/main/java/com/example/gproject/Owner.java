@@ -8,6 +8,10 @@ public class Owner extends User {
     String store_name;
     String location;
 
+    public Owner(){
+        super();
+    }
+
     public Owner(String username, String password, String email, int id, String firstName, String lastName){
         super(username, password, email, id, firstName, lastName);
         this.shop_products = new ArrayList<Product>();

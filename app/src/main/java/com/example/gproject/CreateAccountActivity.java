@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class CreateAccountActivity extends AppCompatActivity implements Contract.View{
+public class CreateAccountActivity extends AppCompatActivity{
     public void goBack(View v) {
         onBackPressed();
     }
@@ -32,11 +32,16 @@ public class CreateAccountActivity extends AppCompatActivity implements Contract
     public void displayMessage(String message){
         TextView textView = findViewById(R.id.create_account_debugView);
         textView.setText(message);
+        OnToast.showToast(message, this);
     }
 
     public void wrongInputShake(EditText et){
         Animation example= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
         et.startAnimation(example);
+    }
+
+    public void onRegistered(){
+        onBackPressed();
     }
 
     public void onRegister(View v){
@@ -56,15 +61,13 @@ public class CreateAccountActivity extends AppCompatActivity implements Contract
         // add regex stuff, if any of these regexes are not satisfied, user is not created
         if(af.equals("") || al.equals("") || ae.equals("") || au.equals("") || ap.equals("")){
             // display message that says "smth cannot be blank"
-            displayMessage("input cannot be blank!");
+            displayMessage("Input cannot be blank!");
         }
         else{
             String type = cs.getSelectedItem().toString().toLowerCase() + "s";
             User u = new User(au, ap, ae, 0, af, al);
-            DBModel.searchUserAndEmailExists(type, u, this); // searches if user and email exists, then if not, creates the user
+            DB.searchUserAndEmailExists(type, u, this); // searches if user and email exists, then if not, creates the user
         }
-
-        //onBackPressed(); // could also send message back to login page to say account has been created
     }
 
     @Override

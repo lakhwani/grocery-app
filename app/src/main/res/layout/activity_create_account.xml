@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".CreateAccountActivity">
 
     <ImageButton
@@ -11,7 +12,7 @@
         android:layout_width="36dp"
         android:layout_height="37dp"
         android:layout_gravity="center"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="?attr/homeAsUpIndicator"
         android:onClick="goBack"
@@ -22,28 +23,26 @@
 
     <TextView
         android:id="@+id/create_account_title"
-        android:layout_width="304dp"
+        android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_marginTop="68dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/product_sans_regular"
         android:text="@string/create_account_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#272727"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/create_account_phrase"
-        android:layout_width="289dp"
+        android:layout_width="match_parent"
         android:layout_height="22dp"
         android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
         android:text="@string/create_account_phrase"
         app:layout_constraintBottom_toTopOf="@+id/choice_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_account_title"
         app:layout_constraintVertical_bias="0.0" />
@@ -53,25 +52,20 @@
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="32dp"
         android:onClick="onRegister"
         android:text="@string/create_account_button_text"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_account_password" />
 
     <Spinner
         android:id="@+id/choice_spinner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="148dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/et_custom"
         android:padding="8dp"
         android:spinnerMode="dropdown"
@@ -83,24 +77,20 @@
 
     <TextView
         android:id="@+id/create_account_info_text"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="22dp"
         android:layout_marginTop="8dp"
         android:text="@string/create_account_info_text"
         app:layout_constraintBottom_toTopOf="@+id/create_account_firstname"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choice_spinner"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintTop_toBottomOf="@+id/choice_spinner" />
 
     <EditText
         android:id="@+id/create_account_lastname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/et_custom"
         android:hint="Your last name"
         android:inputType="textPersonName"
@@ -114,12 +104,10 @@
         android:id="@+id/create_account_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/et_custom"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textVisiblePassword"
         android:padding="15dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,9 +118,7 @@
         android:id="@+id/create_account_username"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/et_custom"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -146,12 +132,10 @@
         android:id="@+id/create_account_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/et_custom"
         android:hint="Your email"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:padding="15dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -162,9 +146,7 @@
         android:id="@+id/create_account_firstname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="48dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/et_custom"
         android:hint="Your first name"
         android:inputType="textPersonName"
@@ -176,15 +158,13 @@
 
     <TextView
         android:id="@+id/create_account_debugView"
-        android:layout_width="241dp"
+        android:layout_width="match_parent"
         android:layout_height="19dp"
         android:text="debug"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/create_account_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_password"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintTop_toBottomOf="@+id/create_account_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

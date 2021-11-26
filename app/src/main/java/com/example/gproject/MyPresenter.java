@@ -20,6 +20,12 @@ public class MyPresenter implements Contract.Presenter{
 
     public void onValidCredentials(Customer c){
         view.displayMessage("VALID login! " + c.getEmail());
+        view.goToCustomerMain(c);
+    }
+
+    public void onValidCredentials(Owner o){
+        view.displayMessage("VALID login! " + o.getEmail());
+        view.goToOwnerMain(o);
     }
 
     public void onInvalidCredentials(String m){

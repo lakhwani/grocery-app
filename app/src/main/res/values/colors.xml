@@ -7,10 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#F6F6F6</color>
+    <color name="dark_grey">#7E7E7E</color>
 
 <!-- NEW GRUBER THEME   -->
     <color name="Gruber_green_light">#44CDB0</color>
     <color name="Gruber_green_dark">#00BD96</color>
+    <color name="Gruber_green_darker">#0E9E80</color>
     <color name="Gruber_orange">#FF9A02</color>
     <color name="Gruber_yellow">#FDD37A</color>
+
+    <color name="Gruber_green_light_low">#B344CDB0</color>
+    <color name="Gruber_green_dark_low">#B300BD96</color>
+    <color name="Gruber_orange_low">#B3FF9A02</color>
+    <color name="Gruber_yellow_low">#B3FDD37A</color>
 </resources>

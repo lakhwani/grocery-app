@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".ManageStorageActivity">
+
+    <ImageButton
+        android:id="@+id/backToMain"
+        android:layout_width="36dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/homeAsUpIndicator"
+        android:onClick="goBack"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/manage_store_title"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/product_sans_regular"
+        android:text="@string/manage_store_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#272727"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/manage_store_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/et_custom"
+        android:hint="@string/manage_store_name"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_store_title" />
+
+    <EditText
+        android:id="@+id/manage_store_location"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/et_custom"
+        android:hint="@string/manage_store_location"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_store_name" />
+
+    <EditText
+        android:id="@+id/manage_store_image_link"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/et_custom"
+        android:hint="@string/manage_store_image_link"
+        android:inputType="textVisiblePassword"
+        android:padding="15dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_store_location" />
+
+    <Button
+        android:id="@+id/manage_store_update"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="updateStoreDetails"
+        android:text="@string/manage_store_update"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_store_image_link" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

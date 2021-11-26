@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/gruber"
@@ -9,6 +11,15 @@
         android:roundIcon="@mipmap/gruber_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GProject">
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageStorageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OwnerMainActivity"
+            android:exported="false" />
         <activity
             android:name=".CreateAccountActivity"
             android:exported="false"

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:fontFamily="@font/product_sans_regular"
+    tools:context=".OwnerMainActivity">
+
+    <TextView
+        android:id="@+id/customer_main_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/owner_main_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/owner_main_title" />
+
+    <TextView
+        android:id="@+id/owner_main_title"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/owner_main_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#272727"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customer_main_subtitle">
+
+<!--        Manage store card-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="15dp"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:id="@+id/c1rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/Gruber_green_darker"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/c1tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Manage Store"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/c1_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/c1tv"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Edit store information."
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/c1_image"
+                    android:layout_width="96dp"
+                    android:layout_height="63dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/round_outline"
+                    android:maxHeight="100dp"
+                    android:src="@drawable/owner_store_white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+<!--        Manage products card-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="15dp"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:id="@+id/c2rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/Gruber_green_dark"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/c2tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Manage Products"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/c2_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/c2tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Add, remove and edit product list."
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/c2_image"
+                    android:layout_width="96dp"
+                    android:layout_height="63dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/round_outline"
+                    android:maxHeight="100dp"
+                    android:src="@drawable/owner_product_white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+<!--        Manage orders card-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:id="@+id/c3rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/Gruber_green_light"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/c3tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Manage Orders"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/c3_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/c3tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:text="View all current orders."
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/c3_image"
+                    android:layout_width="102dp"
+                    android:layout_height="68dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/round_outline"
+                    android:maxHeight="100dp"
+                    android:src="@drawable/owner_order_white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

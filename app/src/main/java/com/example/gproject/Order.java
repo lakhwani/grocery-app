@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Order {
     ArrayList<Product> cart_products;
-    Owner owner;
+    String owner;
 
     public ArrayList<Product> getCart_products() {
         return cart_products;
@@ -14,15 +14,15 @@ public class Order {
         this.cart_products = cart_products;
     }
 
-    public Owner getOwner() {
+    public String getOwner() {
         return owner;
     }
 
-    public void setOwner(Owner owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 
-    public Order(Owner owner){
+    public Order(String owner){
         this.cart_products = new ArrayList<Product>();
         this.owner = owner;
     }

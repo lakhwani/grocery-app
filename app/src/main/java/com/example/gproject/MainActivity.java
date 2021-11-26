@@ -16,16 +16,37 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
     public void displayMessage(String message){
         TextView textView = findViewById(R.id.debugView);
         textView.setText(message);
+        OnToast.showToast(message, this);
     }
 
     public void handleLoginClick(View view){
         EditText lu = findViewById(R.id.login_username);
         EditText lp = findViewById(R.id.login_password);
         presenter.checkLoginCredentials(lu.getText().toString(), lp.getText().toString());
+
+    }
+
+    public void goToCustomerMain(Customer c){
+        Intent intent = new Intent(this, CustomerMainActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, c);
+        startActivity(intent);
+    }
+
+    public void goToOwnerMain(Owner o){
+        Intent intent = new Intent(this, OwnerMainActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, o);
+        startActivity(intent);
     }
 
     public void handleCreateAccountClick(View view){
         Intent intent = new Intent(this, CreateAccountActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, "");
+        startActivity(intent);
+    }
+
+    // debug function
+    public void gotopagedebug(){
+        Intent intent = new Intent(this, CartActivity.class);
         intent.putExtra(EXTRA_MESSAGE, "");
         startActivity(intent);
     }

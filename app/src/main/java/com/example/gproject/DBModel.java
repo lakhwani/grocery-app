@@ -22,75 +22,49 @@ public class DBModel implements Contract.Model{
         this.db = FirebaseDatabase.getInstance("https://gruber-6b4f2-default-rtdb.firebaseio.com/");
     }
 
-    public void checkValidUserCredentials(String username, String password, Contract.Presenter presenter) {
-        DatabaseReference ref = db.getReference("customers");
-        ref.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("error", "Error getting data", task.getException());
-                }
-                else {
-                    String un = "";
-                    String pw = "";
-                    Customer c = null;
-                    try{
-                        un = task.getResult().child("username").getValue().toString();
-                        pw = task.getResult().child("password").getValue().toString();
-                        c = task.getResult().getValue(Customer.class);
-                    }
-                    catch(Exception e){
-                        Log.i("console", "null task");
-                    }
-                    // checks if user and password is valid
-                    if(c != null && username.equals(un) && password.equals(pw)) {
-                        presenter.onValidCredentials(c);
-                    }
-                    else{
-                        presenter.onInvalidCredentials(un);
-                    }
-                }
-            }
-        });
+    public static FirebaseDatabase getDB(){
+        return db;
     }
 
-    public static void searchUserAndEmailExists(String type_of_user, User u, Contract.View v){
+    public void checkValidUserCredentials(String username, String password, Contract.Presenter presenter) {
         DatabaseReference ref= db.getReference();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                boolean b = false;
                 if (snapshot.exists()) {
+                    boolean isValid = false;
                     for(DataSnapshot user: snapshot.child("customers").getChildren()){
-                        if(user.child("username").getValue().toString().equals(u.getUsername())){
-                            Log.i("console", "username found!");
-                            b=true;
-                        }
-                        if(user.child("email").getValue().toString().equals(u.getEmail())){
-                            Log.i("console", "email found!");
-                            b=true;
+                        if(user.child("username").getValue().toString().equals(username) && user.child("password").getValue().toString().equals(password)){
+                            Log.i("console", "login credentials are correct!");
+                            isValid = true;
+                            try{
+                                Customer c = user.getValue(Customer.class);
+                                presenter.onValidCredentials(c);
+                            }
+                            catch(Exception e){
+                                Log.i("console", "null task");
+                            }
                         }
                     }
                     for(DataSnapshot user: snapshot.child("owners").getChildren()){
-                        if(user.child("username").getValue().toString().equals(u.getUsername())){
-                            Log.i("console", "username found!");
-                            b=true;
+                        if(user.child("username").getValue().toString().equals(username) && user.child("password").getValue().toString().equals(password)){
+                            Log.i("console", "login credentials are correct!");
+                            isValid = true;
+                            try{
+                                Owner o = user.getValue(Owner.class);
+                                presenter.onValidCredentials(o);
+                            }
+                            catch(Exception e){
+                                Log.i("console", "null task");
+                            }
+
                         }
-                        if(user.child("email").getValue().toString().equals(u.getEmail())){
-                            Log.i("console", "email found!");
-                            b=true;
-                        }
+                    }
+                    if(!isValid){
+                        presenter.onInvalidCredentials(username);
                     }
                 }else{
                     Log.i("console", "snapshot doesnt exist");
-                }
-                if(!b){
-                    Log.i("console","Not found, will create user");
-                    createUser(type_of_user,u);
-                    v.displayMessage("User created");
-                }
-                else{
-                    v.displayMessage("Username/Email is already taken!");
                 }
             }
 
@@ -99,12 +73,5 @@ public class DBModel implements Contract.Model{
 
             }
         });
-    }
-
-
-    public static void createUser(String type_of_user, User u){
-        // type of user can only be either "customers" or "owners"
-        DatabaseReference ref = db.getReference();
-        ref.child(type_of_user).child(u.getUsername()).setValue(u);
     }
 }
