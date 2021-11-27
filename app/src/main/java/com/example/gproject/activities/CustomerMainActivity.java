@@ -1,8 +1,7 @@
-package com.example.gproject;
+package com.example.gproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,6 +14,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.gproject.Customer;
+import com.example.gproject.DB;
+import com.example.gproject.Helper;
+import com.example.gproject.R;
+
 import java.io.InputStream;
 
 public class CustomerMainActivity extends AppCompatActivity {
@@ -59,10 +64,6 @@ public class CustomerMainActivity extends AppCompatActivity {
         TextView store_location_tv = view.findViewById(R.id.store_location);
         ImageView store_image_tv = view.findViewById(R.id.store_image);
         RelativeLayout store_card_relative = view.findViewById(R.id.store_card_relative);
-//        if(count % 2 == 0){
-//            store_card_relative.setBackgroundColor(ContextCompat.getColor(this, R.color.Gruber_yellow));
-//        }
-
         CardView store_cardview = view.findViewById(R.id.store_cardview);
         store_cardview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +75,12 @@ public class CustomerMainActivity extends AppCompatActivity {
         store_name_tv.setText(Helper.trim(store_name, 17));
         store_location_tv.setText(Helper.trim(store_location, 30));
 
-        new DownloadImageTask(store_image_tv).execute(store_image_link);
+        try{
+            new DownloadImageTask(store_image_tv).execute(store_image_link);
+        }catch(Exception e){
+            Log.i("console", e.getMessage());
+        }
+
         store_image_tv.setClipToOutline(true);
         layout.addView(view);
     }

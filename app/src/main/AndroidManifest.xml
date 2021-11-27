@@ -12,35 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GProject">
         <activity
-            android:name=".ShopActivity"
+            android:name=".activities.ManageOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
+            android:name=".activities.ManageProductActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageStorageActivity"
+            android:name=".activities.ShopActivity"
             android:exported="false" />
         <activity
-            android:name=".OwnerMainActivity"
+            android:name=".activities.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateAccountActivity"
+            android:name=".activities.ManageStoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.OwnerMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CreateAccountActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".CustomerMainActivity"
+            android:name=".activities.CustomerMainActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

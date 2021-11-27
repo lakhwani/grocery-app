@@ -1,4 +1,4 @@
-package com.example.gproject;
+package com.example.gproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class ManageStorageActivity extends AppCompatActivity {
+import com.example.gproject.R;
+
+public class ManageStoreActivity extends AppCompatActivity {
 
     public void goBack(View v) {
         onBackPressed();

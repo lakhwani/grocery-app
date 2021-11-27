@@ -5,6 +5,10 @@ public class Product {
     String brand;
     int amount;
 
+    public Product(){
+
+    }
+
     public Product(double price, String brand, int amount){
         this.price = price;
         this.brand = brand;

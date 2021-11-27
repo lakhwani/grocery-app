@@ -3,8 +3,9 @@ package com.example.gproject;
 import java.util.ArrayList;
 
 public class Order {
-    ArrayList<Product> cart_products;
+    String customer;
     String owner;
+    ArrayList<Product> cart_products;
 
     public ArrayList<Product> getCart_products() {
         return cart_products;
@@ -20,6 +21,14 @@ public class Order {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
     }
 
     public Order(String owner){

@@ -1,4 +1,4 @@
-package com.example.gproject;
+package com.example.gproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements Contract.View{
+import com.example.gproject.Contract;
+import com.example.gproject.Customer;
+import com.example.gproject.DBModel;
+import com.example.gproject.MyPresenter;
+import com.example.gproject.OnToast;
+import com.example.gproject.Owner;
+import com.example.gproject.R;
+
+public class MainActivity extends AppCompatActivity implements Contract.View {
 
     private Contract.Presenter presenter;
     public static final String EXTRA_MESSAGE = "com.example.gproject.CREATE_ACCOUNT";

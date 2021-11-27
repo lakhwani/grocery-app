@@ -1,10 +1,13 @@
-package com.example.gproject;
+package com.example.gproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gproject.R;
+import com.example.gproject.activities.CustomerMainActivity;
 
 public class ShopActivity extends AppCompatActivity {
 
