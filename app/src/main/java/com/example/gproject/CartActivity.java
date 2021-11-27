@@ -18,23 +18,28 @@ public class CartActivity extends AppCompatActivity {
     LinearLayout layout;
     Order order;
 
+    public void goBack(View v) {
+        onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         layout = findViewById(R.id.shopping_cart_layout);
 
-//        order = new Order("Jonathan");
-//        ArrayList<Product> cart = new ArrayList<Product>();
-//        cart.add(new Product(1.99,"Apple",3));
-//        cart.add(new Product(13.99,"Chicken Nuggies",7));
-//        cart.add(new Product(3.49,"Soy sauce",1));
-//        cart.add(new Product(5.69,"Milk",1));
-//        cart.add(new Product(1.28,"Salted Chips",2));
-//        cart.add(new Product(129.99,"Wagyu A5 Steak",1));
-//        cart.add(new Product(2.99,"Cookies",13));
-//        cart.add(new Product(4.99,"Bear Paws",3));
-//        order.setCart_products(cart);
+        order = new Order("Jonathan");
+        ArrayList<Product> cart = new ArrayList<Product>();
+        cart.add(new Product(5000.00,"Anightwith Emmawatson oh boi",200));
+        cart.add(new Product(13.99,"Chicken Nuggies",7));
+        cart.add(new Product(3.49,"Anightwith Emmawatson oh boi",1));
+        cart.add(new Product(5.69,"Milk",1));
+        cart.add(new Product(1.28,"Salted Chips",2));
+        cart.add(new Product(129.99,"Wagyu A5 Steak",1));
+        cart.add(new Product(2.99,"Cookies",13));
+        cart.add(new Product(4.99,"Bear Paws",3));
+        order.setCart_products(cart);
+
 
         addCards();
         setPrice();
@@ -52,7 +57,7 @@ public class CartActivity extends AppCompatActivity {
         for(Product p: order.getCart_products()){
             total += p.price * p.amount;
         }
-        @SuppressLint("DefaultLocale") String button_text = String.format("PURCHASE * CA $%.2f",total);
+        @SuppressLint("DefaultLocale") String button_text = String.format("PURCHASE • CA $%.2f",total);
         b.setText(button_text);
     }
 
@@ -63,7 +68,7 @@ public class CartActivity extends AppCompatActivity {
         TextView cart_item_amount = view.findViewById(R.id.cart_item_amount);
         TextView cart_item_final_price = view.findViewById(R.id.cart_item_final_price);
 
-        cart_item_name.setText(Helper.trim(product_name, 25));
+        cart_item_name.setText(Helper.trim(product_name, 20));
         @SuppressLint("DefaultLocale") String product_price_string = String.format("CA $%.2f", product_price);
         cart_item_price.setText(product_price_string);
         @SuppressLint("DefaultLocale") String product_amt_string = String.format("%d", product_amt);

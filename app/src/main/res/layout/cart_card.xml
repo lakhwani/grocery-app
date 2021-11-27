@@ -35,12 +35,12 @@
                         android:layout_gravity="center"
                         android:background="@drawable/box"
                         android:gravity="center"
-                        android:text="1"
+                        android:text="999"
                         android:textColor="@color/dark_grey" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="250dp"
+                    android:layout_width="205dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:background="@color/white"
@@ -64,7 +64,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
@@ -73,7 +73,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="CA $19999.99"
+                        android:text="CA $999999.99"
                         android:textColor="@color/dark_grey" />
                 </LinearLayout>
             </LinearLayout>

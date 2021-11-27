@@ -26,12 +26,24 @@
         android:layout_height="43dp"
         android:layout_marginTop="68dp"
         android:fontFamily="@font/product_sans_regular"
-        android:text="Shopping Cart"
+        android:text="Store Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#272727"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shopping_cart_location"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginStart="2dp"
+        android:text="location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopping_cart_title"
+        app:layout_constraintVertical_bias="0.085" />
 
     <ScrollView
         android:id="@+id/shopping_cart_scrollview"
@@ -44,7 +56,7 @@
         app:layout_constraintBottom_toTopOf="@+id/shopping_cart_purchase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shopping_cart_title">
+        app:layout_constraintTop_toBottomOf="@+id/shopping_cart_location">
 
         <LinearLayout
             android:id="@+id/shopping_cart_layout"

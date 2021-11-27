@@ -9,6 +9,10 @@ import android.widget.Spinner;
 
 public class ManageStorageActivity extends AppCompatActivity {
 
+    public void goBack(View v) {
+        onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

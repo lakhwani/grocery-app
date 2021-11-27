@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
         setContentView(R.layout.activity_main);
 
         presenter = new MyPresenter(new DBModel(), this);
+//        gotopagedebug();
     }
 
 

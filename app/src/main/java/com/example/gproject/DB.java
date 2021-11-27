@@ -21,7 +21,8 @@ public class DB {
                         String store_name = user.child("store_name").getValue().toString();
                         String store_location = user.child("location").getValue().toString();
                         String store_image_link = user.child("store_image_link").getValue().toString();
-                        cma.addCard(store_name, store_location, store_image_link);
+                        String owner_username = user.child("username").getValue().toString();
+                        cma.addCard(owner_username, store_name, store_location, store_image_link);
                     }
                 }else{
                     Log.i("console", "snapshot doesnt exist");

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GProject">
         <activity
+            android:name=".ShopActivity"
+            android:exported="false" />
+        <activity
             android:name=".CartActivity"
             android:exported="false" />
         <activity
