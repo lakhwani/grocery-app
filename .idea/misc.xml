@@ -3,26 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/drawable/bg_button.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/drawable/box.xml" value="0.3921875" />
-        <entry key="app/src/main/res/drawable/cardlayout.xml" value="0.21145833333333333" />
-        <entry key="app/src/main/res/drawable/et_custom.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/drawable/round_outline.xml" value="0.21145833333333333" />
-        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/bg_button.xml" value="0.3921875" />
+        <entry key="app/src/main/res/drawable/et_custom.xml" value="0.2421875" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.37341299477221807" />
         <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_customer_main.xml" value="0.33399838329952936" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_manage_storage.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/activity_owner_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/card.xml" value="0.33645833333333336" />
-        <entry key="app/src/main/res/layout/cart_card.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/shop_page.xml" value="0.25104166666666666" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber_round.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21770833333333334" />
+        <entry key="app/src/main/res/layout/activity_customer_main.xml" value="0.33645833333333336" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_manage_storage.xml" value="0.5401041666666667" />
+        <entry key="app/src/main/res/layout/activity_owner_main.xml" value="0.5401041666666667" />
+        <entry key="app/src/main/res/layout/activity_shop.xml" value="0.19427083333333334" />
+        <entry key="app/src/main/res/layout/activity_shop_page.xml" value="0.19427083333333334" />
+        <entry key="app/src/main/res/layout/card.xml" value="0.5401041666666667" />
+        <entry key="app/src/main/res/layout/cart_card.xml" value="0.5401041666666667" />
+        <entry key="app/src/main/res/layout/layout.xml" value="0.22604166666666667" />
+        <entry key="app/src/main/res/layout/product.xml" value="0.5401041666666667" />
+        <entry key="app/src/main/res/layout/product_items.xml" value="0.5359375" />
+        <entry key="app/src/main/res/layout/shop_page.xml" value="0.25" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/Gruber_Logo.xml" value="0.22916666666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/Gruber_Logo_round.xml" value="0.22916666666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber.xml" value="0.3921875" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/gruber_Logo.xml" value="0.240625" />
       </map>
     </option>
   </component>
