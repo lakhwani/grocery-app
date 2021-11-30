@@ -6,6 +6,7 @@ public class Product implements Serializable {
     double price;
     String brand;
     int amount;
+    int order_amount;
 
     public Product(){
 
@@ -15,6 +16,7 @@ public class Product implements Serializable {
         this.price = price;
         this.brand = brand;
         this.amount = amount;
+        this.order_amount = 0;
     }
 
     public double getPrice() {
@@ -40,5 +42,7 @@ public class Product implements Serializable {
     public int getAmount(){
         return amount;
     }
+
+    public int getOrderAmount() {return order_amount;}
 
 }

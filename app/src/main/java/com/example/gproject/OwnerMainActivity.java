@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class OwnerMainActivity extends AppCompatActivity {
-    Owner current_user;
+    User current_user;
     public static final String EXTRA_MESSAGE = "com.example.gproject.OWNER_MAIN";
 
     public void toManageStore(View v){
@@ -34,7 +34,7 @@ public class OwnerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_main);
         Intent intent = getIntent();
-        current_user = (Owner)intent.getSerializableExtra(MainActivity.EXTRA_MESSAGE);
+        current_user = (User)intent.getSerializableExtra(MainActivity.EXTRA_MESSAGE);
         setTitle();
     }
 
