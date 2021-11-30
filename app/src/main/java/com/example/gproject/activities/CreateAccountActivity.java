@@ -1,4 +1,4 @@
-package com.example.gproject;
+package com.example.gproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.gproject.DB;
+import com.example.gproject.OnToast;
+import com.example.gproject.R;
+import com.example.gproject.User;
 
 public class CreateAccountActivity extends AppCompatActivity{
     public void goBack(View v) {

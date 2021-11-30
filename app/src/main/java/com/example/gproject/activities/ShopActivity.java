@@ -1,4 +1,4 @@
-package com.example.gproject;
+package com.example.gproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import com.example.gproject.R;
+import com.example.gproject.activities.CustomerMainActivity;
 
 public class ShopActivity extends AppCompatActivity {
 

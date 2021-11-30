@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context=".activities.CartActivity">
+    tools:context=".activities.ManageProductActivity">
 
     <ImageButton
-        android:id="@+id/backToMain2"
+        android:id="@+id/backToMain"
         android:layout_width="36dp"
         android:layout_height="37dp"
         android:layout_gravity="center"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="?attr/homeAsUpIndicator"
         android:onClick="goBack"
@@ -21,62 +22,49 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/shopping_cart_title"
+        android:id="@+id/manage_product_title"
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_marginTop="68dp"
         android:fontFamily="@font/product_sans_regular"
-        android:text="Store Name"
+        android:text="Manage Products"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#272727"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/shopping_cart_location"
-        android:layout_width="match_parent"
-        android:layout_height="22dp"
-        android:layout_marginStart="2dp"
-        android:text="location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shopping_cart_title"
-        app:layout_constraintVertical_bias="0.085" />
-
     <ScrollView
-        android:id="@+id/shopping_cart_scrollview"
+        android:id="@+id/manage_product_scrollview"
         style="@android:style/Widget.ScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:scrollbars="none"
-        app:layout_constraintBottom_toTopOf="@+id/shopping_cart_purchase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shopping_cart_location">
+        app:layout_constraintTop_toBottomOf="@+id/manage_product_title"
+        app:layout_constraintBottom_toTopOf="@+id/manage_product_update">
 
         <LinearLayout
-            android:id="@+id/shopping_cart_layout"
+            android:id="@+id/manage_product_layout"
             android:layout_width="match_parent"
             android:layout_height="450dp"
             android:orientation="vertical" />
     </ScrollView>
 
-
     <Button
-        android:id="@+id/shopping_cart_purchase"
+        android:id="@+id/manage_product_update"
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Purchase"
-        android:textColor="#FFFFFF"
+        android:onClick="updateProductDetails"
+        android:text="Update"
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
