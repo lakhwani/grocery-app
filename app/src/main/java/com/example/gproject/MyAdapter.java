@@ -24,7 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     Context context;
     ArrayList<Product> list;
     Order order;
-    static ArrayList<Product> order_list;
+    public static ArrayList<Product> order_list;
 
 
     public MyAdapter(Context context, ArrayList<Product> list) {

@@ -2,9 +2,6 @@ package com.example.gproject;
 
 import android.util.Log;
 
-import com.example.gproject.activities.CreateAccountActivity;
-import com.example.gproject.activities.CustomerMainActivity;
-import com.example.gproject.activities.ManageProductActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -107,9 +104,9 @@ public class DB {
     public static void addProductToUser(String user_name, Product p){
         Owner o1 = new Owner("testOwner","testPassword","testEmail", 0,"testFirstName", "testLastName");
         ArrayList<Product> products = new ArrayList<Product>();
-        products.add(new Product(1.99,"test1",1));
-        products.add(new Product(2.99,"test2",2));
-        products.add(new Product(3.99,"test3",3));
+        products.add(new Product(1.99,"test1",1 ));
+        products.add(new Product(2.99,"test2",2 ));
+        products.add(new Product(3.99,"test3",3 ));
         o1.setShop_products(products);
         o1.setStore_name("testStoreName");
         o1.setLocation("testStoreLocation");

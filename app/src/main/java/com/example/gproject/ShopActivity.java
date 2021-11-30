@@ -1,32 +1,28 @@
-package com.example.gproject.activities;
+package com.example.gproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gproject.CartActivity;
+import com.example.gproject.MyAdapter;
+import com.example.gproject.Order;
+import com.example.gproject.Product;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import com.example.gproject.R;
-import com.example.gproject.activities.CustomerMainActivity;
+import com.example.gproject.CustomerMainActivity;
 
 public class ShopActivity extends AppCompatActivity {
 
@@ -64,7 +60,7 @@ public class ShopActivity extends AppCompatActivity {
                             String name = pr.child("brand").getValue().toString();
                             String price = pr.child("price").getValue().toString();
                             String amount = pr.child("amount").getValue().toString();
-                            Product product = new Product(Double.parseDouble(price), name, Integer.parseInt(amount), 0);
+                            Product product = new Product(Double.parseDouble(price), name, Integer.parseInt(amount) );
                             list.add(product);
                         }
 

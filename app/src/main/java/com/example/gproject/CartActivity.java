@@ -30,14 +30,14 @@ public class CartActivity extends AppCompatActivity {
 
         order = new Order("Jonathan");
         ArrayList<Product> cart = new ArrayList<Product>();
-        cart.add(new Product(5000.00,"Anightwith Emmawatson oh boi",200, 0));
-        cart.add(new Product(13.99,"Chicken Nuggies",7, 0));
-        cart.add(new Product(3.49,"Anightwith Emmawatson oh boi",1, 0));
-        cart.add(new Product(5.69,"Milk",1, 0));
-        cart.add(new Product(1.28,"Salted Chips",2, 0));
-        cart.add(new Product(129.99,"Wagyu A5 Steak",1, 0));
-        cart.add(new Product(2.99,"Cookies",13, 0));
-        cart.add(new Product(4.99,"Bear Paws",3, 0));
+        cart.add(new Product(5000.00,"Anightwith Emmawatson oh boi",200 ));
+        cart.add(new Product(13.99,"Chicken Nuggies",7 ));
+        cart.add(new Product(3.49,"Anightwith Emmawatson oh boi",1 ));
+        cart.add(new Product(5.69,"Milk",1 ));
+        cart.add(new Product(1.28,"Salted Chips",2 ));
+        cart.add(new Product(129.99,"Wagyu A5 Steak",1 ));
+        cart.add(new Product(2.99,"Cookies",13 ));
+        cart.add(new Product(4.99,"Bear Paws",3 ));
         order.setCart_products(cart);
 
 

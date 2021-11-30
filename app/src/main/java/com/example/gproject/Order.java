@@ -48,4 +48,8 @@ public class Order implements Serializable {
         // some database code to checkout the order
         cart_products.clear();
     }
+
+    public void setCustomer(String testCustomer) {
+
+    }
 }

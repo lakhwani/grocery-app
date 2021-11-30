@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     android:fontFamily="@font/product_sans_regular"
-    tools:context=".activities.OwnerMainActivity">
+    tools:context=".OwnerMainActivity">
 
     <TextView
         android:id="@+id/customer_main_subtitle"
