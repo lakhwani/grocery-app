@@ -3,6 +3,7 @@ package com.example.gproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -83,7 +84,8 @@ public class ShopActivity extends AppCompatActivity {
         order.setOwner(username);
         order.setCart_products(MyAdapter.order_list);
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
-        intent.putExtra("finalorder", order);
+        intent.putExtra("com.example.gproject.FINAL_ORDER", order);
+        Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 
