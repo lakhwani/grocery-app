@@ -62,7 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                 } else {
                     for (Product p : order_list) {
                         if (p.brand.equals(product.brand))
-                            p.order_amount++;
+                            p.order_amount = product.order_amount;
                     }
                 }
             }
@@ -77,7 +77,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                     if (product.order_amount!=0) {
                         for (Product p : order_list) {
                             if (p.brand.equals(product.brand))
-                                p.order_amount--;
+                                p.order_amount = product.order_amount;
                         }
                     } else {
                             for (Product p: order_list) {
