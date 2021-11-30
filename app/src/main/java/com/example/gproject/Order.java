@@ -1,10 +1,15 @@
 package com.example.gproject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Order {
+public class Order implements Serializable {
     ArrayList<Product> cart_products;
     String owner;
+
+    public Order() {
+
+    }
 
     public ArrayList<Product> getCart_products() {
         return cart_products;

@@ -24,9 +24,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="apple"
+
                 android:textSize="26sp"
                 />
+            <Button
+                android:id="@+id/remove_button"
+                android:layout_width="42dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="100dp"
+                android:text="-" />
+           <TextView
+                android:id="@+id/amount_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="0"
+                android:textSize="20dp"
+                />
 
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="42dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:text="+" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,5 +92,6 @@
 
 
     </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

@@ -3,8 +3,13 @@ package com.example.gproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +33,7 @@ public class ShopActivity extends AppCompatActivity {
 //    ArrayList<String> list;
     MyAdapter adapter;
     String username;
-
+    Order order;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,7 @@ public class ShopActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra(CustomerMainActivity.EXTRA_MESSAGE);
+
         recyclerView = findViewById(R.id.list_item);
         ref = FirebaseDatabase.getInstance().getReference("owners");
         recyclerView.setHasFixedSize(true);
@@ -49,18 +55,13 @@ public class ShopActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     if (username.equals(ds.child("username").getValue().toString())) {   // find the wanted Owner shop
-                       /* for (DataSnapshot pr: ds.child("shop_products").getChildren())  {
-                            double price = (double) pr.child("price").getValue();
-                            String brand = (String) pr.child("brand").getValue();
-                            int amount = (int) pr.child("amount").getValue();
-                            list.add(new Product(price, brand, amount));
-                        } */
-                       // list.add(ds.child("username").getValue().toString());
+
                         for (DataSnapshot pr: ds.child("shop_products").getChildren()) {
+
                             String name = pr.child("brand").getValue().toString();
                             String price = pr.child("price").getValue().toString();
                             String amount = pr.child("amount").getValue().toString();
-                            Product product = new Product(Double.parseDouble(price), name, Integer.parseInt(amount));
+                            Product product = new Product(Double.parseDouble(price), name, Integer.parseInt(amount), 0);
                             list.add(product);
                         }
 
@@ -77,5 +78,15 @@ public class ShopActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void checkout(View view) {
+        order = new Order();
+        order.setOwner(username);
+        order.setCart_products(MyAdapter.order_list);
+        Intent intent = new Intent(getApplicationContext(), CartActivity.class);
+        intent.putExtra("finalorder", order);
+        startActivity(intent);
+    }
+
 
 }
