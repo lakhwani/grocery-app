@@ -1,4 +1,4 @@
-package com.example.gproject.activities;
+package com.example.gproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
-import com.example.gproject.Owner;
-import com.example.gproject.R;
 
 public class OwnerMainActivity extends AppCompatActivity {
     Owner current_user;
@@ -22,13 +19,13 @@ public class OwnerMainActivity extends AppCompatActivity {
 
     public void toManageProduct(View v){
         Intent intent = new Intent(this, ManageProductActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, current_user);
+        intent.putExtra(EXTRA_MESSAGE, current_user.getUsername());
         startActivity(intent);
     }
 
     public void toManageOrder(View v){
         Intent intent = new Intent(this, ManageOrderActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, current_user);
+        intent.putExtra(EXTRA_MESSAGE, current_user.getUsername());
         startActivity(intent);
     }
 

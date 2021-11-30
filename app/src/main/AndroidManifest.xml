@@ -12,41 +12,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GProject">
         <activity
-            android:name=".activities.ManageOrderActivity"
+            android:name=".ManageProductPopUp"
+            android:theme="@style/Theme.GProject.PopUp"
             android:exported="false" />
         <activity
-            android:name=".activities.ManageProductActivity"
+            android:name=".ManageOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ShopActivity"
+            android:name=".ManageProductActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CartActivity"
+            android:name=".ShopActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ManageStoreActivity"
+            android:name=".CartActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.OwnerMainActivity"
+            android:name=".ManageStoreActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CreateAccountActivity"
+            android:name=".OwnerMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateAccountActivity"
             android:exported="false"
-            android:parentActivityName=".activities.MainActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".activities.CustomerMainActivity"
+            android:name=".CustomerMainActivity"
             android:exported="false"
-            android:parentActivityName=".activities.MainActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

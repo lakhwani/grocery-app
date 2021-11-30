@@ -16,8 +16,10 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_manage_order.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/activity_manage_product.xml" value="0.33645833333333336" />
+        <entry key="app/src/main/res/layout/activity_manage_product_pop_up.xml" value="0.35208333333333336" />
         <entry key="app/src/main/res/layout/activity_manage_storage.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/activity_owner_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_shop_page.xml" value="0.11458333333333333" />
         <entry key="app/src/main/res/layout/card.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/cart_card.xml" value="0.45" />
         <entry key="app/src/main/res/layout/manage_product_card.xml" value="0.33645833333333336" />

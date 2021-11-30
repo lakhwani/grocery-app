@@ -1,4 +1,4 @@
-package com.example.gproject.activities;
+package com.example.gproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -14,11 +14,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.example.gproject.Customer;
-import com.example.gproject.DB;
-import com.example.gproject.Helper;
-import com.example.gproject.R;
 
 import java.io.InputStream;
 

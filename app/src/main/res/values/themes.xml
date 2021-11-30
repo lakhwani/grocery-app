@@ -14,4 +14,9 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/product_sans_regular</item>
     </style>
+
+    <style name="Theme.GProject.PopUp">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
 </resources>

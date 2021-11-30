@@ -1,4 +1,4 @@
-package com.example.gproject.activities;
+package com.example.gproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,14 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.example.gproject.Contract;
-import com.example.gproject.Customer;
-import com.example.gproject.DBModel;
-import com.example.gproject.MyPresenter;
-import com.example.gproject.OnToast;
-import com.example.gproject.Owner;
-import com.example.gproject.R;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
 

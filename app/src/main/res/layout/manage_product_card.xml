@@ -76,7 +76,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:textColor="@color/white"
-                        android:text="Edit"
+                        android:text="Del"
                         android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>

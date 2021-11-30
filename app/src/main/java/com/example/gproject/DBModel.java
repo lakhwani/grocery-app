@@ -42,7 +42,7 @@ public class DBModel implements Contract.Model{
                                 presenter.onValidCredentials(c);
                             }
                             catch(Exception e){
-                                Log.i("console", "null task");
+                                Log.i("console", e.getMessage());
                             }
                         }
                     }
@@ -55,9 +55,8 @@ public class DBModel implements Contract.Model{
                                 presenter.onValidCredentials(o);
                             }
                             catch(Exception e){
-                                Log.i("console", "null task");
+                                Log.i("console", e.getMessage());
                             }
-
                         }
                     }
                     if(!isValid){

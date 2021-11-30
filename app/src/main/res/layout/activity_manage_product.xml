@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context=".activities.ManageProductActivity">
+    tools:context=".ManageProductActivity">
 
     <ImageButton
         android:id="@+id/backToMain"
@@ -59,8 +59,8 @@
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="updateProductDetails"
-        android:text="Update"
+        android:onClick="addProduct"
+        android:text="Add Product"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
