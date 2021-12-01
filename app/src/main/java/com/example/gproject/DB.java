@@ -8,8 +8,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-
 public class DB {
     private static final FirebaseDatabase db = FirebaseDatabase.getInstance("https://gruber-6b4f2-default-rtdb.firebaseio.com/");
 
@@ -89,7 +87,7 @@ public class DB {
         DatabaseReference ref = db.getReference();
 
         if(type_of_user.equals("owners")){
-            Owner owner = (Owner) u;
+            Owner owner = new Owner(u.getUsername(), u.getPassword(), u.getEmail(), 0, u.getFirstName(), u.getLastName());
             // sets default values
             owner.setLocation("");
             owner.setStore_name("");
@@ -101,27 +99,93 @@ public class DB {
         }
     }
 
-    public static void addProductToUser(String user_name, Product p){
-        Owner o1 = new Owner("testOwner","testPassword","testEmail", 0,"testFirstName", "testLastName");
-        ArrayList<Product> products = new ArrayList<Product>();
-        products.add(new Product(1.99,"test1",1 ));
-        products.add(new Product(2.99,"test2",2 ));
-        products.add(new Product(3.99,"test3",3 ));
-        o1.setShop_products(products);
-        o1.setStore_name("testStoreName");
-        o1.setLocation("testStoreLocation");
-        o1.setStore_image_link("http://www.goodnet.org/photos/620x0/30501_hd.jpg");
-        Order order = new Order("testOwner");
-        order.setCustomer("testCustomer");
-        ArrayList<Order> os = new ArrayList<Order>();
-        os.add(order);
-        order.addProduct(new Product(1.99, "testCustomerProduct1", 1));
-        order.addProduct(new Product(2.99, "testCustomerProduct2", 2));
-        order.addProduct(new Product(3.99, "testCustomerProduct3", 3));
-        o1.setCustomer_order(os);
+    public static void addProductToUser(String user_name, Product p, ManageProductPopUp mpp){
+//        Owner o1 = new Owner("testOwner","testPassword","testEmail", 0,"testFirstName", "testLastName");
+//        ArrayList<Product> products = new ArrayList<Product>();
+//        products.add(new Product(1.99,"test1",1));
+//        products.add(new Product(2.99,"test2",2));
+//        products.add(new Product(3.99,"test3",3));
+//        o1.setShop_products(products);
+//        o1.setStore_name("testStoreName");
+//        o1.setLocation("testStoreLocation");
+//        o1.setStore_image_link("http://www.goodnet.org/photos/620x0/30501_hd.jpg");
+//        Order order = new Order("testOwner");
+//        order.setCustomer("testCustomer");
+//        ArrayList<Order> os = new ArrayList<Order>();
+//        os.add(order);
+//        order.addProduct(new Product(1.99, "testCustomerProduct1", 1));
+//        order.addProduct(new Product(2.99, "testCustomerProduct2", 2));
+//        order.addProduct(new Product(3.99, "testCustomerProduct3", 3));
+//        o1.setCustomer_order(os);
+//
+//        DatabaseReference ref = db.getReference();
+//        ref.child("owners").child("testOwner").setValue(o1);
+        DatabaseReference ref = db.getReference().child("owners").child(user_name).child("shop_products");
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    ref.child(p.getBrand()).setValue(p);
+                    mpp.onAddedProductRefreshView(p);
+                }else{
+                    Log.i("console", "snapshot doesnt exist");
+                    ref.child(p.getBrand()).setValue(p);
+                    mpp.onAddedProductRefreshView(p);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.i("console", "Error!");
+            }
+        });
+    }
 
-        DatabaseReference ref = db.getReference();
-        ref.child("owners").child("testOwner").setValue(o1);
+    public static void editProductUser(String user_name, Product p, ManageProductActivity mpa){
+//        Owner o1 = new Owner("testOwner","testPassword","testEmail", 0,"testFirstName", "testLastName");
+//        ArrayList<Product> products = new ArrayList<Product>();
+//        products.add(new Product(1.99,"test1",1));
+//        products.add(new Product(2.99,"test2",2));
+//        products.add(new Product(3.99,"test3",3));
+//        o1.setShop_products(products);
+//        o1.setStore_name("testStoreName");
+//        o1.setLocation("testStoreLocation");
+//        o1.setStore_image_link("http://www.goodnet.org/photos/620x0/30501_hd.jpg");
+//        Order order = new Order("testOwner");
+//        order.setCustomer("testCustomer");
+//        ArrayList<Order> os = new ArrayList<Order>();
+//        os.add(order);
+//        order.addProduct(new Product(1.99, "testCustomerProduct1", 1));
+//        order.addProduct(new Product(2.99, "testCustomerProduct2", 2));
+//        order.addProduct(new Product(3.99, "testCustomerProduct3", 3));
+//        o1.setCustomer_order(os);
+//
+//        DatabaseReference ref = db.getReference();
+//        ref.child("owners").child("testOwner").setValue(o1);
+        DatabaseReference ref = db.getReference().child("owners").child(user_name).child("shop_products");
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for(DataSnapshot snap_shot_product: snapshot.getChildren()) {
+                        int amount = Integer.parseInt(snap_shot_product.child("amount").getValue().toString());
+                        String brand = snap_shot_product.child("brand").getValue().toString();
+                        double price = Double.parseDouble(snap_shot_product.child("price").getValue().toString());
+                        if (amount == p.getAmount() && brand.equals(p.getBrand()) && price == p.getPrice()) {
+                            ref.child(snap_shot_product.getKey()).removeValue();
+                            Log.i("console", "same, therefore delete! " + snap_shot_product.getKey());
+                            // refreshes the view
+                            mpa.onDeletedProductRefreshView();
+                        }
+                    }
+                }else{
+                    Log.i("console", "snapshot doesnt exist");
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.i("console", "Error!");
+            }
+        });
     }
 
     public static void getManageProducts(String user_name, ManageProductActivity mpa){

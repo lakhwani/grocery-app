@@ -2,6 +2,7 @@ package com.example.gproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -44,7 +45,7 @@ public class ShopActivity extends AppCompatActivity {
         username = intent.getStringExtra(CustomerMainActivity.EXTRA_MESSAGE);
 
         recyclerView = findViewById(R.id.list_item);
-        ref = FirebaseDatabase.getInstance().getReference("owners");
+        ref = FirebaseDatabase.getInstance("https://gruber-6b4f2-default-rtdb.firebaseio.com/").getReference("owners");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();
@@ -84,8 +85,8 @@ public class ShopActivity extends AppCompatActivity {
         order.setOwner(username);
         order.setCart_products(MyAdapter.order_list);
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
-        intent.putExtra("com.example.gproject.FINAL_ORDER", order);
-        Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
+        intent.putExtra(CartActivity.EXTRA_MESSAGE, order);
+        OnToast.showToast("Checkout sucess!",this);
         startActivity(intent);
     }
 

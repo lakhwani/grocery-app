@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Order implements Serializable {
     ArrayList<Product> cart_products;
+    String customer;
     String owner;
 
     public Order() {
@@ -27,6 +28,14 @@ public class Order implements Serializable {
         this.owner = owner;
     }
 
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
     public Order(String owner){
         this.cart_products = new ArrayList<Product>();
         this.owner = owner;
@@ -47,9 +56,5 @@ public class Order implements Serializable {
     public void checkOut(Customer c){
         // some database code to checkout the order
         cart_products.clear();
-    }
-
-    public void setCustomer(String testCustomer) {
-
     }
 }

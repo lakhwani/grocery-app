@@ -3,6 +3,7 @@ package com.example.gproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +15,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CartActivity extends AppCompatActivity {
-
     LinearLayout layout;
     Order order;
+
+    public static final String EXTRA_MESSAGE = "com.example.gproject.CART";
 
     public void goBack(View v) {
         onBackPressed();
@@ -28,18 +30,20 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         layout = findViewById(R.id.shopping_cart_layout);
 
-        order = new Order("Jonathan");
-        ArrayList<Product> cart = new ArrayList<Product>();
-        cart.add(new Product(5000.00,"Anightwith Emmawatson oh boi",200 ));
-        cart.add(new Product(13.99,"Chicken Nuggies",7 ));
-        cart.add(new Product(3.49,"Anightwith Emmawatson oh boi",1 ));
-        cart.add(new Product(5.69,"Milk",1 ));
-        cart.add(new Product(1.28,"Salted Chips",2 ));
-        cart.add(new Product(129.99,"Wagyu A5 Steak",1 ));
-        cart.add(new Product(2.99,"Cookies",13 ));
-        cart.add(new Product(4.99,"Bear Paws",3 ));
-        order.setCart_products(cart);
+        Intent intent = getIntent();
+        order = (Order) intent.getSerializableExtra(EXTRA_MESSAGE);
 
+//        order = new Order("Jonathan");
+//        ArrayList<Product> cart = new ArrayList<Product>();
+//        cart.add(new Product(5000.00,"IPhone 13",200));
+//        cart.add(new Product(13.99,"Chicken Nuggies",7));
+//        cart.add(new Product(3.49,"Apple Pen",1));
+//        cart.add(new Product(5.69,"Milk",1));
+//        cart.add(new Product(1.28,"Salted Chips",2));
+//        cart.add(new Product(129.99,"Wagyu A5 Steak",1));
+//        cart.add(new Product(2.99,"Cookies",13));
+//        cart.add(new Product(4.99,"Bear Paws",3));
+//        order.setCart_products(cart);
 
         addCards();
         setPrice();
@@ -47,7 +51,7 @@ public class CartActivity extends AppCompatActivity {
 
     public void addCards(){
         for(Product p: order.getCart_products()){
-            addCard(p.getBrand(),p.price, p.amount);
+            addCard(p.getBrand(),p.getPrice(), p.getAmount());
         }
     }
 
@@ -55,7 +59,7 @@ public class CartActivity extends AppCompatActivity {
         Button b = findViewById(R.id.shopping_cart_purchase);
         double total = 0.0d;
         for(Product p: order.getCart_products()){
-            total += p.price * p.amount;
+            total += p.getPrice() * p.getAmount();
         }
         @SuppressLint("DefaultLocale") String button_text = String.format("PURCHASE • CA $%.2f",total);
         b.setText(button_text);

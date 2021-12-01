@@ -1,10 +1,16 @@
 package com.example.gproject;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     double price;
     String brand;
     int amount;
     int order_amount;
+
+    public Product(){
+
+    }
 
     public Product(double price, String brand, int amount){
         this.price = price;
@@ -36,6 +42,7 @@ public class Product {
     public int getAmount(){
         return amount;
     }
+
     public int getOrderAmount() {return order_amount;}
 
 }

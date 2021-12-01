@@ -27,6 +27,7 @@ public class DBModel implements Contract.Model{
     }
 
     public void checkValidUserCredentials(String username, String password, Contract.Presenter presenter) {
+        Log.i("console","yeet");
         DatabaseReference ref= db.getReference();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -42,7 +43,7 @@ public class DBModel implements Contract.Model{
                                 presenter.onValidCredentials(c);
                             }
                             catch(Exception e){
-                                Log.i("console", "null task");
+                                Log.i("console", e.getMessage());
                             }
                         }
                     }
@@ -51,13 +52,14 @@ public class DBModel implements Contract.Model{
                             Log.i("console", "login credentials are correct!");
                             isValid = true;
                             try{
-                                Owner o = user.getValue(Owner.class);
-                                presenter.onValidCredentials(o);
+                                User u = user.getValue(User.class);
+                                Log.i("console", u.getEmail());
+//                                Owner o = user.getValue(Owner.class);
+                                presenter.onValidCredentials(u);
                             }
                             catch(Exception e){
-                                Log.i("console", "null task");
+                                Log.i("console", e.getMessage());
                             }
-
                         }
                     }
                     if(!isValid){

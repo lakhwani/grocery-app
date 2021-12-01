@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         startActivity(intent);
     }
 
-    public void goToOwnerMain(Owner o){
+    public void goToOwnerMain(User u){
         Intent intent = new Intent(this, OwnerMainActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, o);
+        intent.putExtra(EXTRA_MESSAGE, u);
         startActivity(intent);
     }
 
