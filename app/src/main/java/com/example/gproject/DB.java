@@ -192,8 +192,23 @@ public class DB {
     }
 
     public static void addOrderToOwner(Order order){
-
-
+        DatabaseReference ref = db.getReference().child("owners").child(order.getOwner());
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String ID = Helper.createID();
+                    order.setUnique_ID(ID);
+                    ref.child("customer_order").child(ID).setValue(order);
+                }else{
+                    Log.i("console", "snapshot doesnt exist");
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.i("console", "Error!");
+            }
+        });
     }
 
     public static void getManageProducts(String user_name, ManageProductActivity mpa){

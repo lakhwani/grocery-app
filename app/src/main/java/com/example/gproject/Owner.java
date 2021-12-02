@@ -7,7 +7,6 @@ public class Owner extends User implements Serializable {
     String store_name;
     String location;
     String store_image_link;
-    String unique_ID;
     ArrayList<Product> shop_products;
     ArrayList<Order> customer_order;
 
@@ -19,14 +18,6 @@ public class Owner extends User implements Serializable {
         super(username, password, email, id, firstName, lastName);
         this.shop_products = new ArrayList<Product>();
         this.customer_order = new ArrayList<Order>();
-    }
-
-    public String getUnique_ID() {
-        return unique_ID;
-    }
-
-    public void setUnique_ID(String unique_ID) {
-        this.unique_ID = unique_ID;
     }
 
     public String getStore_image_link() {
