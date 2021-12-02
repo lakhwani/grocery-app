@@ -13,7 +13,7 @@ public class OwnerMainActivity extends AppCompatActivity {
 
     public void toManageStore(View v){
         Intent intent = new Intent(this, ManageStoreActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, current_user);
+        intent.putExtra(EXTRA_MESSAGE, current_user.getUsername());
         startActivity(intent);
     }
 
