@@ -7,6 +7,7 @@ public class Order implements Serializable {
     ArrayList<Product> cart_products;
     String customer;
     String owner;
+    double final_price;
 
     public Order() {
 

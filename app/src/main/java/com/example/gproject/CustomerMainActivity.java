@@ -33,6 +33,8 @@ public class CustomerMainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         current_user = (Customer)intent.getSerializableExtra(MainActivity.EXTRA_MESSAGE);
         setTitle();
+        Intent i = new Intent(getApplicationContext(), ShopActivity.class);
+        i.putExtra(EXTRA_MESSAGE, current_user);
     }
 
     public void setTitle(){
