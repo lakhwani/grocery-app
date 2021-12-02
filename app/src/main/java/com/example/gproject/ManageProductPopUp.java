@@ -15,7 +15,10 @@ import android.widget.EditText;
 public class ManageProductPopUp extends AppCompatActivity {
 
     public void goBack(View v) {
-        onBackPressed();
+        OnToast.showToast("No product added", this);
+        Intent intent = new Intent();
+        setResult(RESULT_CANCELED, intent);
+        finish();
     }
 
     Product product;
