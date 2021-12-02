@@ -32,19 +32,6 @@ public class CartActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         order = (Order) intent.getSerializableExtra(EXTRA_MESSAGE);
-
-//        order = new Order("Jonathan");
-//        ArrayList<Product> cart = new ArrayList<Product>();
-//        cart.add(new Product(5000.00,"IPhone 13",200));
-//        cart.add(new Product(13.99,"Chicken Nuggies",7));
-//        cart.add(new Product(3.49,"Apple Pen",1));
-//        cart.add(new Product(5.69,"Milk",1));
-//        cart.add(new Product(1.28,"Salted Chips",2));
-//        cart.add(new Product(129.99,"Wagyu A5 Steak",1));
-//        cart.add(new Product(2.99,"Cookies",13));
-//        cart.add(new Product(4.99,"Bear Paws",3));
-//        order.setCart_products(cart);
-
         addCards();
         setPrice();
     }
@@ -81,5 +68,9 @@ public class CartActivity extends AppCompatActivity {
         cart_item_final_price.setText(totalPrice);
 
         layout.addView(view);
+    }
+
+    public void purchase(View view) {
+        DB.addOrderToOwner(order);
     }
 }

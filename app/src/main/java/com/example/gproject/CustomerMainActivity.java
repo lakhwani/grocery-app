@@ -22,6 +22,7 @@ public class CustomerMainActivity extends AppCompatActivity {
     LinearLayout layout;
     Customer current_user;
     public static final String EXTRA_MESSAGE = "com.example.gproject.CUSTOMER_MAIN";
+    public static final String CUSTOMER_EXTRA_MESSAGE = "com.example.gproject.CUSTOMER";
 
 
     @Override
@@ -49,6 +50,7 @@ public class CustomerMainActivity extends AppCompatActivity {
     public void onShopClicked(String user_name){
         Intent intent = new Intent(this, ShopActivity.class);
         intent.putExtra(EXTRA_MESSAGE, user_name);
+        intent.putExtra(CUSTOMER_EXTRA_MESSAGE, current_user.getUsername());
         startActivity(intent);
     }
 

@@ -34,6 +34,7 @@ public class ShopActivity extends AppCompatActivity {
 //    ArrayList<String> list;
     MyAdapter adapter;
     String username;
+    String customer_username;
     Order order;
 
     @Override
@@ -43,6 +44,7 @@ public class ShopActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra(CustomerMainActivity.EXTRA_MESSAGE);
+        customer_username = intent.getStringExtra(CustomerMainActivity.CUSTOMER_EXTRA_MESSAGE);
 
         recyclerView = findViewById(R.id.list_item);
         ref = FirebaseDatabase.getInstance("https://gruber-6b4f2-default-rtdb.firebaseio.com/").getReference("owners");
@@ -83,10 +85,15 @@ public class ShopActivity extends AppCompatActivity {
     public void checkout(View view) {
         order = new Order();
         order.setOwner(username);
+        order.setCustomer(customer_username);
         order.setCart_products(MyAdapter.order_list);
+        double final_price = 0;
+        for (Product p: MyAdapter.order_list)
+            final_price += p.price * p.order_amount;
+        order.final_price = final_price;
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
         intent.putExtra(CartActivity.EXTRA_MESSAGE, order);
-        OnToast.showToast("Checkout sucess!",this);
+        OnToast.showToast("Checkout success!",this);
         startActivity(intent);
     }
 

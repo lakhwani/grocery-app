@@ -6,7 +6,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Logger;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class DB {
     private static final FirebaseDatabase db = FirebaseDatabase.getInstance("https://gruber-6b4f2-default-rtdb.firebaseio.com/");
@@ -186,6 +189,11 @@ public class DB {
                 Log.i("console", "Error!");
             }
         });
+    }
+
+    public static void addOrderToOwner(Order order){
+
+
     }
 
     public static void getManageProducts(String user_name, ManageProductActivity mpa){
