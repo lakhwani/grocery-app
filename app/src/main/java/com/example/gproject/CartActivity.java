@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class CartActivity extends AppCompatActivity {
     LinearLayout layout;
     Order order;
+    String store_name;
 
     public static final String EXTRA_MESSAGE = "com.example.gproject.CART";
 
@@ -32,6 +33,8 @@ public class CartActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         order = (Order) intent.getSerializableExtra(EXTRA_MESSAGE);
+        store_name = intent.getStringExtra("STORE_NAME");
+        changeName();
         addCards();
         setPrice();
     }
@@ -40,6 +43,11 @@ public class CartActivity extends AppCompatActivity {
         for(Product p: order.getCart_products()){
             addCard(p.getBrand(),p.getPrice(), p.getOrderAmount());
         }
+    }
+
+    public void changeName(){
+        TextView shopping_cart_location = findViewById(R.id.shopping_cart_location);
+        shopping_cart_location.setText(Helper.trim(store_name, 21));
     }
 
     public void setPrice(){

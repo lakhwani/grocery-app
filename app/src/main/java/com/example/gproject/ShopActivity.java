@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,8 +20,11 @@ public class ShopActivity extends AppCompatActivity {
     //    ArrayList<String> list;
     MyAdapter adapter;
     String username;
+    String store_name;
+    String store_location;
     String customer_username;
     Order order;
+
 
     public void goBack(View v) {
         onBackPressed();
@@ -32,7 +37,10 @@ public class ShopActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra(CustomerMainActivity.EXTRA_MESSAGE);
+        store_name = intent.getStringExtra("STORE_NAME");
+        store_location = intent.getStringExtra("STORE_LOC");
         customer_username = intent.getStringExtra(CustomerMainActivity.CUSTOMER_EXTRA_MESSAGE);
+        changeName();
 
         recyclerView = findViewById(R.id.list_item);
         recyclerView.setHasFixedSize(true);
@@ -43,6 +51,13 @@ public class ShopActivity extends AppCompatActivity {
 
         DB.getShopProducts(username, adapter, recyclerView, list, this);
 
+    }
+
+    public void changeName(){
+        TextView shop_page_title = findViewById(R.id.shop_page_title);
+        TextView shop_page_loc = findViewById(R.id.shop_page_location);
+        shop_page_title.setText(Helper.trim(store_name, 21));
+        shop_page_loc.setText(Helper.trim(store_location, 50));
     }
 
     public void checkout(View view) {
@@ -56,6 +71,7 @@ public class ShopActivity extends AppCompatActivity {
         order.final_price = final_price;
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
         intent.putExtra(CartActivity.EXTRA_MESSAGE, order);
+        intent.putExtra("STORE_NAME", store_name);
         OnToast.showToast("Checkout success!",this);
         startActivity(intent);
     }
