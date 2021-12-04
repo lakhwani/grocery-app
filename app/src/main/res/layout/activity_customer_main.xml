@@ -26,6 +26,7 @@
         android:layout_marginTop="48dp"
         android:fontFamily="@font/product_sans_regular"
         android:text="@string/customer_main_title"
+        android:textSize="30dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#272727"
         app:layout_constraintEnd_toEndOf="parent"

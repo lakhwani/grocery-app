@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class CartActivity extends AppCompatActivity {
     LinearLayout layout;
     Order order;
+    String store_name;
 
     public static final String EXTRA_MESSAGE = "com.example.gproject.CART";
 
@@ -32,34 +33,28 @@ public class CartActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         order = (Order) intent.getSerializableExtra(EXTRA_MESSAGE);
-
-//        order = new Order("Jonathan");
-//        ArrayList<Product> cart = new ArrayList<Product>();
-//        cart.add(new Product(5000.00,"IPhone 13",200));
-//        cart.add(new Product(13.99,"Chicken Nuggies",7));
-//        cart.add(new Product(3.49,"Apple Pen",1));
-//        cart.add(new Product(5.69,"Milk",1));
-//        cart.add(new Product(1.28,"Salted Chips",2));
-//        cart.add(new Product(129.99,"Wagyu A5 Steak",1));
-//        cart.add(new Product(2.99,"Cookies",13));
-//        cart.add(new Product(4.99,"Bear Paws",3));
-//        order.setCart_products(cart);
-
+        store_name = intent.getStringExtra("STORE_NAME");
+        changeName();
         addCards();
         setPrice();
     }
 
     public void addCards(){
         for(Product p: order.getCart_products()){
-            addCard(p.getBrand(),p.getPrice(), p.getAmount());
+            addCard(p.getBrand(),p.getPrice(), p.getOrderAmount());
         }
+    }
+
+    public void changeName(){
+        TextView shopping_cart_location = findViewById(R.id.shopping_cart_location);
+        shopping_cart_location.setText(Helper.trim(store_name, 21));
     }
 
     public void setPrice(){
         Button b = findViewById(R.id.shopping_cart_purchase);
         double total = 0.0d;
         for(Product p: order.getCart_products()){
-            total += p.getPrice() * p.getAmount();
+            total += p.getPrice() * p.getOrderAmount();
         }
         @SuppressLint("DefaultLocale") String button_text = String.format("PURCHASE • CA $%.2f",total);
         b.setText(button_text);
@@ -81,5 +76,14 @@ public class CartActivity extends AppCompatActivity {
         cart_item_final_price.setText(totalPrice);
 
         layout.addView(view);
+    }
+
+    public void purchase(View view) {
+        DB.addOrderToOwner(order, this);
+    }
+
+    public void onSuccessfulPurchase(){
+        OnToast.showToast("Purchase Successful!", this);
+        onBackPressed();
     }
 }

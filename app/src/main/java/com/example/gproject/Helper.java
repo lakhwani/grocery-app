@@ -12,4 +12,8 @@ public class Helper {
         return s;
     }
 
+    public static String createID(){
+        return java.util.UUID.randomUUID().toString();
+    }
+
 }

@@ -22,6 +22,7 @@ public class CustomerMainActivity extends AppCompatActivity {
     LinearLayout layout;
     Customer current_user;
     public static final String EXTRA_MESSAGE = "com.example.gproject.CUSTOMER_MAIN";
+    public static final String CUSTOMER_EXTRA_MESSAGE = "com.example.gproject.CUSTOMER";
 
 
     @Override
@@ -39,7 +40,7 @@ public class CustomerMainActivity extends AppCompatActivity {
 
     public void setTitle(){
         TextView title = findViewById(R.id.customer_main_title);
-        String new_string = getString(R.string.customer_main_title) + " " + current_user.getFirstName() + "!";
+        String new_string = getString(R.string.customer_main_title) + " " + Helper.trim(current_user.getFirstName(), 9) + "!";
         title.setText(new_string);
     }
 
@@ -48,9 +49,12 @@ public class CustomerMainActivity extends AppCompatActivity {
         addCard("","test","test", "https://www.simplyrecipes.com/thmb/8caxM88NgxZjz-T2aeRW3xjhzBg=/2000x1125/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-8f256746d649404baa36a44d271329bc.jpg");
     }
 
-    public void onShopClicked(String user_name){
+    public void onShopClicked(String user_name, String store_name, String store_location){
         Intent intent = new Intent(this, ShopActivity.class);
         intent.putExtra(EXTRA_MESSAGE, user_name);
+        intent.putExtra("STORE_NAME", store_name);
+        intent.putExtra("STORE_LOC", store_location);
+        intent.putExtra(CUSTOMER_EXTRA_MESSAGE, current_user.getUsername());
         startActivity(intent);
     }
 
@@ -65,7 +69,7 @@ public class CustomerMainActivity extends AppCompatActivity {
         store_cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onShopClicked(owner_username);
+                onShopClicked(owner_username, store_name, store_location);
             }
         });
 

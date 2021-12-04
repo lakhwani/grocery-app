@@ -3,29 +3,74 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".ShopActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_item"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageButton
+        android:id="@+id/backToMain2"
+        android:layout_width="36dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="?attr/homeAsUpIndicator"
+        android:onClick="goBack"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shop_page_title"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/product_sans_regular"
+        android:text="Store Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#272727"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/shop_page_location"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginStart="2dp"
+        android:text="location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shop_page_title"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/checkout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shop_page_location">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
     <Button
         android:id="@+id/checkout"
-        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Checkout"
         android:onClick="checkout"
+        android:text="Checkout"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

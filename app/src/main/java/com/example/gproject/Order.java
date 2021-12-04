@@ -7,10 +7,27 @@ public class Order implements Serializable {
     ArrayList<Product> cart_products;
     String customer;
     String owner;
+    String unique_ID;
     double final_price;
 
     public Order() {
 
+    }
+
+    public String getUnique_ID() {
+        return unique_ID;
+    }
+
+    public void setUnique_ID(String unique_ID) {
+        this.unique_ID = unique_ID;
+    }
+
+    public double getFinal_price() {
+        return final_price;
+    }
+
+    public void setFinal_price(double final_price) {
+        this.final_price = final_price;
     }
 
     public ArrayList<Product> getCart_products() {

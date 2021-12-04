@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -44,8 +45,10 @@ public class ManageProductActivity extends AppCompatActivity {
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
         // Collect data from the intent and use it
         super.onActivityResult(requestCode, resultCode, data);
-        Product p = (Product)data.getSerializableExtra("product_that_was_added");
-        addCard(p.getBrand(), p.getPrice(), p.getAmount());
+        if(resultCode == -1){
+            Product p = (Product)data.getSerializableExtra("product_that_was_added");
+            addCard(p.getBrand(), p.getPrice(), p.getAmount());
+        }
 //        recreate();
     }
 

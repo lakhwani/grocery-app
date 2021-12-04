@@ -45,4 +45,13 @@ public class Product implements Serializable {
 
     public int getOrderAmount() {return order_amount;}
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "price=" + price +
+                ", brand='" + brand + '\'' +
+                ", amount=" + amount +
+                ", order_amount=" + order_amount +
+                '}';
+    }
 }
