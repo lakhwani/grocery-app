@@ -51,7 +51,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 //        String str = list.get(position);
         holder.product_amount.setText(String.valueOf(product.getAmount()));
         holder.product_name.setText(product.getBrand());
-        holder.product_price.setText(String.valueOf(product.getPrice()));
+        holder.product_price.setText("CA $" + String.valueOf(product.getPrice()));
         holder.add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

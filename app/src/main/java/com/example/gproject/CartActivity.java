@@ -38,7 +38,7 @@ public class CartActivity extends AppCompatActivity {
 
     public void addCards(){
         for(Product p: order.getCart_products()){
-            addCard(p.getBrand(),p.getPrice(), p.getAmount());
+            addCard(p.getBrand(),p.getPrice(), p.getOrderAmount());
         }
     }
 
@@ -46,7 +46,7 @@ public class CartActivity extends AppCompatActivity {
         Button b = findViewById(R.id.shopping_cart_purchase);
         double total = 0.0d;
         for(Product p: order.getCart_products()){
-            total += p.getPrice() * p.getAmount();
+            total += p.getPrice() * p.getOrderAmount();
         }
         @SuppressLint("DefaultLocale") String button_text = String.format("PURCHASE • CA $%.2f",total);
         b.setText(button_text);
@@ -71,6 +71,11 @@ public class CartActivity extends AppCompatActivity {
     }
 
     public void purchase(View view) {
-        DB.addOrderToOwner(order);
+        DB.addOrderToOwner(order, this);
+    }
+
+    public void onSuccessfulPurchase(){
+        OnToast.showToast("Purchase Successful!", this);
+        onBackPressed();
     }
 }
