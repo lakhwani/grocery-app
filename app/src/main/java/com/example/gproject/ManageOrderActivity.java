@@ -54,12 +54,18 @@ public class ManageOrderActivity extends AppCompatActivity {
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
     }
 
+   static public void removedata(Order order) {
+        DatabaseReference rref = FirebaseDatabase.getInstance().getReference().child("owners").child(order.getOwner()).child("customer_order")
+                .child(order.getUnique_ID());
+        rref.removeValue();
+
+    }
 }
