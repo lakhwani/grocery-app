@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2109375" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/drawable/bg_button.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/drawable/box.xml" value="0.3921875" />
@@ -23,6 +24,8 @@
         <entry key="app/src/main/res/layout/card.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/cart_card.xml" value="0.33" />
         <entry key="app/src/main/res/layout/manage_product_card.xml" value="0.33645833333333336" />
+        <entry key="app/src/main/res/layout/manage_product_layout.xml" value="0.5359375" />
+        <entry key="app/src/main/res/layout/order_items.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/product_items.xml" value="0.5" />
         <entry key="app/src/main/res/layout/shop_page.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/gruber.xml" value="0.21770833333333334" />
