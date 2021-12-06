@@ -51,7 +51,7 @@ public class ManageOrderAdapter extends RecyclerView.Adapter<ManageOrderAdapter.
             public void onClick(View v) {
                 // go to pop up page for product list
                 Intent intent = new Intent(context, ManageProductOrderActivity.class);
-                intent.putExtra("object", order.getCart_products());
+                intent.putExtra("object", order);
                 context.startActivity(intent);
             }
         });

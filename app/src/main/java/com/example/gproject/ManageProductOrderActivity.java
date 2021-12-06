@@ -24,23 +24,34 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class ManageProductOrderActivity extends AppCompatActivity {
-
     RecyclerView recyclerView;
-    ArrayList<Product> list;
+    ArrayList<Product> products;
     ManageProductOrderAdapter adapter;
+    Order order;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_product_pop_up);
+        setContentView(R.layout.activity_manage_order_popup);
         Intent intent = getIntent();
-        list = (ArrayList<Product>) intent.getSerializableExtra("object");
-        Log.i("d","here?");
-        recyclerView = findViewById(R.id.list);
+        order = (Order) intent.getSerializableExtra("object");
+        products = order.getCart_products();
+        recyclerView = findViewById(R.id.orders);
+        if (recyclerView == null)
+            Log.i("fu","ffff");
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        adapter = new ManageProductOrderAdapter(getApplicationContext(), list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new ManageProductOrderAdapter(this, products);
         recyclerView.setAdapter(adapter);
     }
 
+    public void goBack(View view) {
+        onBackPressed();
+    }
+
+    public void complete(View view) {
+        ManageOrderActivity.removedata(order);
+        Intent intent = new Intent(this, ManageOrderActivity.class);
+        startActivity(intent);
+    }
 }

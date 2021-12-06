@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="15dp"
-tools:context=".ManageProductOrderActivity">
-
-<TextView
-    android:id="@+id/manage_order_title"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="43dp"
-    android:layout_marginTop="68dp"
-    android:fontFamily="@font/product_sans_regular"
-    android:text="Manage Products"
-    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-    android:textColor="#272727"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".ManageProductOrderActivity">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/list"
-    android:layout_width="0dp"
-    android:layout_height="603dp"
-    android:layout_marginStart="5dp"
-    android:layout_marginTop="32dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginBottom="25dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/manage_order_title" />
+    <ImageButton
+        android:id="@+id/backToMain"
+        android:layout_width="36dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/homeAsUpIndicator"
+        android:onClick="goBack"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/manage_order_title"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/product_sans_regular"
+        android:text="Products"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#272727"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/orders"
+        android:layout_width="0dp"
+        android:layout_height="603dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_order_title" />
+
+    <Button
+        android:id="@+id/complete_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Complete"
+        android:onClick="complete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
