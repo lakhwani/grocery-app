@@ -1,6 +1,8 @@
 package com.example.gproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,12 +31,14 @@ public class ManageProductOrderAdapter extends RecyclerView.Adapter<ManageProduc
         return new ManageProductOrderAdapter.ViewHolder(v);
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onBindViewHolder(@NonNull ManageProductOrderAdapter.ViewHolder holder, int position) {
-    Product product = list.get(position);
-    holder.product_price.setText(String.valueOf(product.getPrice()));
-    holder.product_name.setText(product.getBrand());
-    holder.product_amount.setText(String.valueOf(product.getOrderAmount()));
+        Product product = list.get(position);
+        holder.product_price.setText(Helper.trim(String.format("CA %.2f",product.getPrice()), 25));
+        holder.product_name.setText(Helper.trim(product.getBrand(), 20));
+        Log.i("console", product.toString());
+        holder.product_amount.setText(String.valueOf(product.getOrderAmount()));
     }
 
     @Override

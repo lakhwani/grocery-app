@@ -1,22 +1,16 @@
 package com.example.gproject;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
@@ -55,14 +49,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         holder.add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                product.order_amount++;
-                holder.display_amount.setText(String.valueOf(product.order_amount));
+                product.orderAmount++;
+                holder.display_amount.setText(String.valueOf(product.orderAmount));
                 if (!order_list.contains(product)) {
                     order_list.add(product);
                 } else {
                     for (Product p : order_list) {
                         if (p.brand.equals(product.brand))
-                            p.order_amount = product.order_amount;
+                            p.orderAmount = product.orderAmount;
                     }
                 }
             }
@@ -71,13 +65,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         holder.remove_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (product.order_amount != 0) {
-                    product.order_amount--;
-                    holder.display_amount.setText(String.valueOf(product.order_amount));
-                    if (product.order_amount!=0) {
+                if (product.orderAmount != 0) {
+                    product.orderAmount--;
+                    holder.display_amount.setText(String.valueOf(product.orderAmount));
+                    if (product.orderAmount !=0) {
                         for (Product p : order_list) {
                             if (p.brand.equals(product.brand))
-                                p.order_amount = product.order_amount;
+                                p.orderAmount = product.orderAmount;
                         }
                     } else {
                         for (Product p: order_list) {

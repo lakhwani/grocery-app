@@ -6,7 +6,7 @@ public class Product implements Serializable {
     double price;
     String brand;
     int amount;
-    int order_amount;
+    int orderAmount = 0;
 
     public Product(){
 
@@ -16,7 +16,13 @@ public class Product implements Serializable {
         this.price = price;
         this.brand = brand;
         this.amount = amount;
-        this.order_amount = 0;
+    }
+
+    public Product(double price, String brand, int amount, int orderAmount){
+        this.price = price;
+        this.brand = brand;
+        this.amount = amount;
+        this.orderAmount = orderAmount;
     }
 
     public double getPrice() {
@@ -43,7 +49,11 @@ public class Product implements Serializable {
         return amount;
     }
 
-    public int getOrderAmount() {return order_amount;}
+    public int getOrderAmount() {return orderAmount;}
+
+    public void setOrderAmount(int orderAmount) {
+        this.orderAmount = orderAmount;
+    }
 
     @Override
     public String toString() {
@@ -51,7 +61,7 @@ public class Product implements Serializable {
                 "price=" + price +
                 ", brand='" + brand + '\'' +
                 ", amount=" + amount +
-                ", order_amount=" + order_amount +
+                ", order_amount=" + orderAmount +
                 '}';
     }
 }

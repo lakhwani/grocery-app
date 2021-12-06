@@ -48,9 +48,8 @@ public class ShopActivity extends AppCompatActivity {
         list = new ArrayList<>();
         adapter = new MyAdapter(this, list);
         recyclerView.setAdapter(adapter);
-
+        Log.i("console","oncreate");
         DB.getShopProducts(username, adapter, recyclerView, list, this);
-
     }
 
     public void changeName(){
@@ -60,6 +59,18 @@ public class ShopActivity extends AppCompatActivity {
         shop_page_loc.setText(Helper.trim(store_location, 50));
     }
 
+    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+        // Collect data from the intent and use it
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == -1){
+            Log.i("console","success");
+            onBackPressed();
+        }
+        else{
+            Log.i("console", String.valueOf(resultCode));
+        }
+    }
+
     public void checkout(View view) {
         order = new Order();
         order.setOwner(username);
@@ -67,13 +78,14 @@ public class ShopActivity extends AppCompatActivity {
         order.setCart_products(MyAdapter.order_list);
         double final_price = 0;
         for (Product p: MyAdapter.order_list)
-            final_price += p.price * p.order_amount;
+            final_price += p.price * p.orderAmount;
         order.final_price = final_price;
         Intent intent = new Intent(getApplicationContext(), CartActivity.class);
         intent.putExtra(CartActivity.EXTRA_MESSAGE, order);
         intent.putExtra("STORE_NAME", store_name);
         OnToast.showToast("Checkout success!",this);
-        startActivity(intent);
+//        startActivity(intent);
+        startActivityForResult(intent, 1);
     }
 
 

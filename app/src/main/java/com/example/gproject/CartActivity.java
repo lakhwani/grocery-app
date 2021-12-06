@@ -84,6 +84,8 @@ public class CartActivity extends AppCompatActivity {
 
     public void onSuccessfulPurchase(){
         OnToast.showToast("Purchase Successful!", this);
-        onBackPressed();
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }

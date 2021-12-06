@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,16 +30,17 @@ public class ManageProductOrderActivity extends AppCompatActivity {
     ManageProductOrderAdapter adapter;
     Order order;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_order_popup);
         Intent intent = getIntent();
         order = (Order) intent.getSerializableExtra("object");
+        TextView title = findViewById(R.id.manage_order_popup_title);
+        title.setText("Order from " + Helper.trim(order.customer,10));
         products = order.getCart_products();
         recyclerView = findViewById(R.id.orders);
-        if (recyclerView == null)
-            Log.i("fu","ffff");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ManageProductOrderAdapter(this, products);
