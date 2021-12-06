@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="15dp"
+tools:context=".ManageProductOrderActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/orders_products"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<TextView
+    android:id="@+id/manage_order_title"
+    android:layout_width="match_parent"
+    android:layout_height="43dp"
+    android:layout_marginTop="68dp"
+    android:fontFamily="@font/product_sans_regular"
+    android:text="Manage Products"
+    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+    android:textColor="#272727"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list"
+    android:layout_width="0dp"
+    android:layout_height="603dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="25dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/manage_order_title" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

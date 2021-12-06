@@ -38,7 +38,7 @@ public class ManageOrderActivity extends AppCompatActivity {
         username = intent.getStringExtra(OwnerMainActivity.EXTRA_MESSAGE);
 
         recyclerView = findViewById(R.id.list_item_order);
-        ref = FirebaseDatabase.getInstance().getReference().child("owners").child(username).child("customer_order");
+        ref = FirebaseDatabase.getInstance("https://gruber-6b4f2-default-rtdb.firebaseio.com/").getReference().child("owners").child(username).child("customer_order");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         orders = new ArrayList<>();
@@ -66,6 +66,5 @@ public class ManageOrderActivity extends AppCompatActivity {
         DatabaseReference rref = FirebaseDatabase.getInstance().getReference().child("owners").child(order.getOwner()).child("customer_order")
                 .child(order.getUnique_ID());
         rref.removeValue();
-
     }
 }

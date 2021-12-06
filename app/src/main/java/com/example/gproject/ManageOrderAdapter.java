@@ -1,8 +1,5 @@
 package com.example.gproject;
 
-import static com.example.gproject.ManageOrderActivity.*;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -41,7 +38,14 @@ public class ManageOrderAdapter extends RecyclerView.Adapter<ManageOrderAdapter.
 //        String str = list.get(position);
         holder.customer_name.setText(order.customer);
         holder.total_price.setText(String.valueOf(order.final_price));
+        holder.complete.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                ManageOrderActivity.removedata(order);
+                ((ManageOrderActivity)context).recreate();
+            }
+        });
         holder.view_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -29,20 +29,18 @@ public class ManageProductOrderActivity extends AppCompatActivity {
     ArrayList<Product> list;
     ManageProductOrderAdapter adapter;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_product_pop_up);
         Intent intent = getIntent();
         list = (ArrayList<Product>) intent.getSerializableExtra("object");
-//        Log.i("d","here?");
-        recyclerView = findViewById(R.id.orders_products);
+        Log.i("d","here?");
+        recyclerView = findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         adapter = new ManageProductOrderAdapter(getApplicationContext(), list);
         recyclerView.setAdapter(adapter);
     }
-
 
 }
