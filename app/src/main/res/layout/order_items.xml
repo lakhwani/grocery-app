@@ -1,84 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-app:cardElevation="8dp"
-app:cardCornerRadius="8dp"
-android:layout_margin="16dp">
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="16dp"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
+        android:id="@+id/manage_product_card_relative"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
-        <TextView
-            android:id="@+id/customer_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Customer name"
-            android:textSize="26sp"
-            />
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:padding="7dp">
 
+            <TextView
+                android:id="@+id/order_number"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/box"
+                android:text="1"
+                android:textColor="@color/dark_grey" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/view_order"
-            android:layout_width="119dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="45dp"
-            android:text="View Order"
-            android:textSize="10dp" />
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/customer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Name"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="CA $20.00"
+                android:textColor="@color/dark_grey" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/view_order"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:backgroundTint="@color/Gruber_green_dark"
+                android:gravity="center"
+                android:insetTop="6dp"
+                android:insetBottom="3dp"
+                android:paddingLeft="1dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="1dp"
+                android:paddingRight="1dp"
+                android:paddingBottom="1dp"
+                android:text="View Order"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/complete"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:backgroundTint="@color/Gruber_green_dark"
+                android:gravity="center"
+                android:insetTop="3dp"
+                android:insetBottom="6dp"
+                android:paddingLeft="1dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="1dp"
+                android:paddingRight="1dp"
+                android:paddingBottom="1dp"
+                android:text="Complete ✓"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total : "
-            android:textSize="22sp"
-            />
-
-        <TextView
-            android:id="@+id/total_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:text="45"
-            android:textSize="22sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:text="$"
-            android:textSize="22sp" />
-
-        <Button
-            android:id="@+id/complete"
-            android:layout_width="119dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="95dp"
-            android:text="Complete"
-            android:textSize="10dp" />
-
-    </LinearLayout>
-
-
-
-
-</LinearLayout>
-
-
 </androidx.cardview.widget.CardView>

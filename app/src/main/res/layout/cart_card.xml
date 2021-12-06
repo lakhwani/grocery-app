@@ -79,14 +79,4 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/checkout_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="9dp"
-        android:text="Checkout" />
 </RelativeLayout>

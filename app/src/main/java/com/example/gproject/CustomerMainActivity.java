@@ -38,7 +38,7 @@ public class CustomerMainActivity extends AppCompatActivity {
 
     public void setTitle(){
         TextView title = findViewById(R.id.customer_main_title);
-        String new_string = getString(R.string.customer_main_title) + " " + Helper.trim(current_user.getFirstName(), 9) + "!";
+        String new_string = getString(R.string.owner_main_title) + " " + Helper.trim(current_user.getFirstName(), 12) + "! 👋";
         title.setText(new_string);
     }
 

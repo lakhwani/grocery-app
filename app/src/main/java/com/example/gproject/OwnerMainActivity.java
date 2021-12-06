@@ -40,7 +40,7 @@ public class OwnerMainActivity extends AppCompatActivity {
 
     public void setTitle(){
         TextView title = findViewById(R.id.owner_main_title);
-        String new_string = getString(R.string.owner_main_title) + " " + current_user.getFirstName() + "!";
+        String new_string = getString(R.string.owner_main_title) + " " + Helper.trim(current_user.getFirstName(), 12) + "! 👋";
         title.setText(new_string);
     }
 }

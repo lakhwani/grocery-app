@@ -22,12 +22,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/manage_order_title"
+        android:id="@+id/manage_order_popup_title"
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_marginTop="68dp"
         android:fontFamily="@font/product_sans_regular"
-        android:text="Products"
+        android:text="Order from"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#272727"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,23 +37,23 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orders"
         android:layout_width="0dp"
-        android:layout_height="603dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manage_order_title" />
+        app:layout_constraintBottom_toTopOf="@id/manage_order_popup_complete"
+        app:layout_constraintTop_toBottomOf="@+id/manage_order_popup_title" />
 
     <Button
-        android:id="@+id/complete_main"
-        android:layout_width="wrap_content"
+        android:id="@+id/manage_order_popup_complete"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="Complete"
         android:onClick="complete"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -9,13 +9,13 @@
     <string name="create_account_button_text">Register</string>
     <string name="create_account_info_text">Enter your information below:</string>
 
-    <string name="customer_main_title">Welcome Back, </string>
+    <string name="customer_main_title">Hey, </string>
     <string name="customer_main_subtitle">Choose a shop: </string>
 
-    <string name="owner_main_title">Welcome Back, </string>
+    <string name="owner_main_title">Hey, </string>
     <string name="owner_main_subtitle">Choose from the following: </string>
 
-    <string name="manage_store_title">Manage Store Details </string>
+    <string name="manage_store_title">Manage Store Details 🛍 </string>
     <string name="manage_store_name">Store Name</string>
     <string name="manage_store_location">Store Location</string>
     <string name="manage_storage_tax">Service and Tax</string>

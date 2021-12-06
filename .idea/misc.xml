@@ -15,8 +15,8 @@
         <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_customer_main.xml" value="0.33399838329952936" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_manage_order.xml" value="0.33645833333333336" />
-        <entry key="app/src/main/res/layout/activity_manage_order_popup.xml" value="0.19166666666666668" />
+        <entry key="app/src/main/res/layout/activity_manage_order.xml" value="0.4090909090909091" />
+        <entry key="app/src/main/res/layout/activity_manage_order_popup.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_manage_product.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/activity_manage_product_pop_up.xml" value="0.35208333333333336" />
         <entry key="app/src/main/res/layout/activity_manage_storage.xml" value="0.33645833333333336" />
@@ -24,8 +24,9 @@
         <entry key="app/src/main/res/layout/activity_shop_page.xml" value="0.33" />
         <entry key="app/src/main/res/layout/card.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/cart_card.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/manage_product_card.xml" value="0.33645833333333336" />
+        <entry key="app/src/main/res/layout/manage_product_card.xml" value="0.335" />
         <entry key="app/src/main/res/layout/manage_product_layout.xml" value="0.5359375" />
+        <entry key="app/src/main/res/layout/new_order_layout.xml" value="0.5" />
         <entry key="app/src/main/res/layout/order_items.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/order_popup_items.xml" value="0.33" />
         <entry key="app/src/main/res/layout/product_items.xml" value="0.5" />
