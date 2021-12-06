@@ -19,6 +19,9 @@
             android:name=".ManageOrderActivity"
             android:exported="false" />
         <activity
+            android:name=".ManageProductOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".ManageProductActivity"
             android:exported="false" />
         <activity

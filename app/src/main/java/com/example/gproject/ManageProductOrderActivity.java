@@ -4,9 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +28,6 @@ public class ManageProductOrderActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Product> list;
     ManageProductOrderAdapter adapter;
-    Order order;
 
 
     @Override
@@ -30,30 +35,14 @@ public class ManageProductOrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_product_pop_up);
         Intent intent = getIntent();
-        order = (Order) intent.getSerializableExtra("object");
-        setWindowProperties();
-        list = order.getCart_products();
+        list = (ArrayList<Product>) intent.getSerializableExtra("object");
+//        Log.i("d","here?");
         recyclerView = findViewById(R.id.orders_products);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ManageProductOrderAdapter(this, list);
+        adapter = new ManageProductOrderAdapter(getApplicationContext(), list);
         recyclerView.setAdapter(adapter);
     }
 
-    public void setWindowProperties(){
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-        getWindow().setLayout(width, (int)(height*0.7));
-
-        WindowManager.LayoutParams params = getWindow().getAttributes();
-        params.gravity = Gravity.BOTTOM;
-        params.x = 0;
-        params.y = 0;
-        params.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        params.dimAmount = 0.5f;
-        getWindow().setAttributes(params);
-    }
 
 }

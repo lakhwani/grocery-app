@@ -28,7 +28,7 @@ public class ManageProductOrderAdapter extends RecyclerView.Adapter<ManageProduc
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.order_popup_items,parent,false);
         return new ManageProductOrderAdapter.ViewHolder(v);
     }
 
@@ -38,7 +38,7 @@ public class ManageProductOrderAdapter extends RecyclerView.Adapter<ManageProduc
 
         Product product = list.get(position);
 //        String str = list.get(position);
-        holder.product_amount.setText(String.valueOf(product.getAmount()));
+        holder.product_amount.setText(String.valueOf(product.getOrderAmount()));
         holder.product_name.setText(product.getBrand());
         holder.product_price.setText("CA $" + String.valueOf(product.getPrice()));
    }

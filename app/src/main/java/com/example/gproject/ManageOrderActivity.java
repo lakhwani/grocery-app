@@ -42,7 +42,7 @@ public class ManageOrderActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         orders = new ArrayList<>();
-        adapter = new ManageOrderAdapter(this, orders);
+        adapter = new ManageOrderAdapter(ManageOrderActivity.this, orders);
         recyclerView.setAdapter(adapter);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -50,7 +50,7 @@ public class ManageOrderActivity extends AppCompatActivity {
                 for (DataSnapshot ds: snapshot.getChildren())
                     orders.add(ds.getValue(Order.class));
 
-                adapter = new ManageOrderAdapter(getApplicationContext(), orders);
+                adapter = new ManageOrderAdapter(ManageOrderActivity.this, orders);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
