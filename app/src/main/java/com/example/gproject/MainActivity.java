@@ -14,16 +14,20 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     public static final String EXTRA_MESSAGE = "com.example.gproject.CREATE_ACCOUNT";
 
     public void displayMessage(String message){
-        TextView textView = findViewById(R.id.debugView);
-        textView.setText(message);
         OnToast.showToast(message, this);
     }
 
-    public void handleLoginClick(View view){
+    public void handleLoginClick(View view) {
         EditText lu = findViewById(R.id.login_username);
         EditText lp = findViewById(R.id.login_password);
-        presenter.checkLoginCredentials(lu.getText().toString(), lp.getText().toString());
+        String user = lu.getText().toString();
+        String pass = lp.getText().toString();
 
+        if (user.equals("") || pass.equals("")) {
+            displayMessage("Input cannot be blank!");
+        } else {
+            presenter.checkLoginCredentials(lu.getText().toString(), lp.getText().toString());
+        }
     }
 
     public void goToCustomerMain(Customer c){
@@ -44,21 +48,12 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         startActivity(intent);
     }
 
-    // debug function
-    public void gotopagedebug(){
-        Intent intent = new Intent(this, CartActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, "");
-        startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         presenter = new MyPresenter(new DBModel(), this);
-//        gotopagedebug();
     }
-
 
 }

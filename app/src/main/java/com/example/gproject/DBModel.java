@@ -27,7 +27,7 @@ public class DBModel implements Contract.Model{
     }
 
     public void checkValidUserCredentials(String username, String password, Contract.Presenter presenter) {
-        Log.i("console","yeet");
+        Log.i("console","inside");
         DatabaseReference ref= db.getReference();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

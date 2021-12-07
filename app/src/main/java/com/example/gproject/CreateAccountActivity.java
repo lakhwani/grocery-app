@@ -35,8 +35,6 @@ public class CreateAccountActivity extends AppCompatActivity{
     }
 
     public void displayMessage(String message){
-        TextView textView = findViewById(R.id.create_account_debugView);
-        textView.setText(message);
         OnToast.showToast(message, this);
     }
 

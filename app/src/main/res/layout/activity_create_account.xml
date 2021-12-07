@@ -156,15 +156,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/choice_spinner" />
 
-    <TextView
-        android:id="@+id/create_account_debugView"
-        android:layout_width="match_parent"
-        android:layout_height="19dp"
-        android:text="debug"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_password" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

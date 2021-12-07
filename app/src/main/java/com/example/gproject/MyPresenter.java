@@ -13,24 +13,24 @@ public class MyPresenter implements Contract.Presenter{
     }
 
     public void checkLoginCredentials(String username, String password) {
-        if(username.equals(""))
-            view.displayMessage("username cannot be empty");
+        if(username.equals("") || password.equals(""))
+            view.displayMessage("Input cannot be blank!");
         else
             model.checkValidUserCredentials(username, password, this);
     }
 
     public void onValidCredentials(Customer c){
-        view.displayMessage("VALID login! " + c.getEmail());
+        view.displayMessage("Valid login!");
         view.goToCustomerMain(c);
     }
 
     public void onValidCredentials(User u){
-        view.displayMessage("VALID login! " + u.getEmail());
+        view.displayMessage("Valid login!");
         view.goToOwnerMain(u);
     }
 
     public void onInvalidCredentials(String m){
-        view.displayMessage("Invalid login! " + m);
+        view.displayMessage("Invalid login!");
     }
 
 }

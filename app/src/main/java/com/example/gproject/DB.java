@@ -84,7 +84,6 @@ public class DB {
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
     }
@@ -98,7 +97,7 @@ public class DB {
             // sets default values
             owner.setLocation("");
             owner.setStore_name("");
-            owner.setStore_image_link("http://www.goodnet.org/photos/620x0/30501_hd.jpg");
+            owner.setStore_image_link("https://techcrunch.com/wp-content/uploads/2015/03/groceries-e1554037962210.jpg");
             ref.child(type_of_user).child(owner.getUsername()).setValue(owner);
         }
         else if(type_of_user.equals("customers")){
@@ -239,7 +238,13 @@ public class DB {
                 if (snapshot.exists()) {
                     ref.child("store_name").setValue(sn);
                     ref.child("location").setValue(sl);
-                    ref.child("store_image_link").setValue(si);
+                    if(si.equals("")){
+                        String simp = "https://techcrunch.com/wp-content/uploads/2015/03/groceries-e1554037962210.jpg";
+                        ref.child("store_image_link").setValue(simp);
+                    }
+                    else{
+                        ref.child("store_image_link").setValue(si);
+                    }
                     OnToast.showToast("Successfully Updated!", msa);
                 }else{
                     Log.i("console", "snapshot doesnt exist");

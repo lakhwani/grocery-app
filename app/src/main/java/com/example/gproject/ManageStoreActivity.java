@@ -37,7 +37,7 @@ public class ManageStoreActivity extends AppCompatActivity {
         String sl = msl.getText().toString();
         String si = msi.getText().toString();
 
-        if(sn.equals("") || sl.equals("") || si.equals("")){
+        if(sn.equals("") || sl.equals("")){
             displayMessage("Input cannot be blank!");
         }
         else{

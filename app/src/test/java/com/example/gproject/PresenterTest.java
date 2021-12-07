@@ -26,30 +26,39 @@ public class PresenterTest {
     DBModel model;
 
     @Test
-    public void test_presenter_checkLoginCredentials1() {
+    public void test_presenter_checkLoginCredentialsBlank1() {
 
         MyPresenter presenter = new MyPresenter(model, view);
         presenter.checkLoginCredentials("", "");
 
-        verify(view).displayMessage("username cannot be empty");
+        verify(view).displayMessage("Input cannot be blank!");
+    }
+
+    @Test
+    public void test_presenter_checkLoginCredentialsBlank2() {
+
+        MyPresenter presenter = new MyPresenter(model, view);
+        presenter.checkLoginCredentials("", "p");
+
+        verify(view).displayMessage("Input cannot be blank!");
+    }
+
+    @Test
+    public void test_presenter_checkLoginCredentialsBlank3() {
+
+        MyPresenter presenter = new MyPresenter(model, view);
+        presenter.checkLoginCredentials("Potato", "");
+
+        verify(view).displayMessage("Input cannot be blank!");
     }
 
     @Test
     public void test_presenter_checkLoginCredentials2() {
 
         MyPresenter presenter = new MyPresenter(model, view);
-        presenter.checkLoginCredentials("peter", "p");
+        presenter.checkLoginCredentials("Potato", "p");
 
-        verify(model, times(1)).checkValidUserCredentials("peter", "p", presenter);
-    }
-
-    @Test
-    public void test_presenter_checkLoginCredentials3() {
-
-        MyPresenter presenter = new MyPresenter(model, view);
-        presenter.checkLoginCredentials("peter", "");
-
-        verify(model, times(1)).checkValidUserCredentials("peter", "", presenter);
+        verify(model, times(1)).checkValidUserCredentials("Potato", "p", presenter);
     }
 
     @Test
@@ -60,7 +69,7 @@ public class PresenterTest {
 
         presenter.onValidCredentials(c);
 
-        verify(view).displayMessage("VALID login! peter@gmail.com");
+        verify(view).displayMessage("Valid login!");
         verify(view, times(1)).goToCustomerMain(c);
     }
 
@@ -72,7 +81,7 @@ public class PresenterTest {
 
         presenter.onValidCredentials(o);
 
-        verify(view).displayMessage("VALID login! peter@gmail.com");
+        verify(view).displayMessage("Valid login!");
         verify(view, times(1)).goToOwnerMain(o);
     }
 
@@ -80,10 +89,8 @@ public class PresenterTest {
     public void test_presenter_onInvalidCredentials() {
 
         MyPresenter presenter = new MyPresenter(model, view);
-
         presenter.onInvalidCredentials(anyString());
-
-        verify(view).displayMessage("Invalid login! " + anyString());
+        verify(view).displayMessage("Invalid login!");
 
     }
 }
