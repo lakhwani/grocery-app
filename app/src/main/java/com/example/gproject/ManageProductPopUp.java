@@ -33,7 +33,6 @@ public class ManageProductPopUp extends AppCompatActivity {
         product = (Product)intent.getSerializableExtra(ManageProductActivity.EXTRA_MESSAGE);
         owner_name = intent.getStringExtra("owner_name");
         setWindowProperties();
-        setWindowText();
 
         Button addButton = findViewById(R.id.manage_product_pop_up_update);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -42,9 +41,16 @@ public class ManageProductPopUp extends AppCompatActivity {
                 EditText mb = findViewById(R.id.manage_product_pop_up_brand);
                 EditText mp = findViewById(R.id.manage_product_pop_up_price);
                 EditText ma = findViewById(R.id.manage_product_pop_up_amt);
-                Product new_product = new Product(Double.parseDouble(mp.getText().toString()), mb.getText().toString(), Integer.parseInt(ma.getText().toString()));
 
-                DB.addProductToUser(owner_name, new_product, ManageProductPopUp.this);
+                int t = 0;
+
+                try{
+                    Product new_product = new Product(Double.parseDouble(mp.getText().toString()), mb.getText().toString(), Integer.parseInt(ma.getText().toString()));
+                    DB.addProductToUser(owner_name, new_product, ManageProductPopUp.this);
+                }catch (NumberFormatException e) {
+                    OnToast.showToast("Please input correct input type!", ManageProductPopUp.this);
+                }
+
             }
         });
     }
@@ -71,16 +77,5 @@ public class ManageProductPopUp extends AppCompatActivity {
         params.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
         params.dimAmount = 0.5f;
         getWindow().setAttributes(params);
-    }
-
-    @SuppressLint("DefaultLocale")
-    public void setWindowText(){
-        EditText mb = findViewById(R.id.manage_product_pop_up_brand);
-        EditText mp = findViewById(R.id.manage_product_pop_up_price);
-        EditText ma = findViewById(R.id.manage_product_pop_up_amt);
-
-        mb.setText(Helper.trim(product.getBrand(),19));
-        mp.setText(String.format("%.2f",product.getPrice()));
-        ma.setText(String.format("%d",product.getAmount()));
     }
 }
