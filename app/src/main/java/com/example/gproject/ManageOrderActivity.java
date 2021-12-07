@@ -49,7 +49,6 @@ public class ManageOrderActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     orders.add(ds.getValue(Order.class));
-                    Log.i("console", ds.getValue(Order.class).getCart_products().toString());
                 }
 
                 adapter = new ManageOrderAdapter(ManageOrderActivity.this, orders);
