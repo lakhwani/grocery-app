@@ -54,11 +54,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                 if (!order_list.contains(product)) {
                     order_list.add(product);
                 } else {
-                    for (Product p : order_list) {
-                        if (p.brand.equals(product.brand))
-                            p.orderAmount = product.orderAmount;
-                    }
-                }
+                    order_list.get(order_list.indexOf(product)).setOrderAmount(product.getOrderAmount());
+               }
             }
         });
 
@@ -69,17 +66,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                     product.orderAmount--;
                     holder.display_amount.setText(String.valueOf(product.orderAmount));
                     if (product.orderAmount !=0) {
-                        for (Product p : order_list) {
-                            if (p.brand.equals(product.brand))
-                                p.orderAmount = product.orderAmount;
-                        }
+                        order_list.get(order_list.indexOf(product)).setOrderAmount(product.getOrderAmount());
                     } else {
-                        for (Product p: order_list) {
-                            if (p.brand.equals(product.brand))
-                                order_list.remove(p);
-                        }
+                        order_list.remove(order_list.get(order_list.indexOf(product)));
                     }
-
                 }
 
 
