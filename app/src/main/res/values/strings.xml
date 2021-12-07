@@ -19,7 +19,7 @@
     <string name="manage_store_name">Store Name</string>
     <string name="manage_store_location">Store Location</string>
     <string name="manage_storage_tax">Service and Tax</string>
-    <string name="manage_store_image_link">Link to Store image/logo</string>
+    <string name="manage_store_image_link">Link to Store Image/Logo (optional)</string>
     <string name="manage_store_update">Update</string>
 
 
