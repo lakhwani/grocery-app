@@ -49,7 +49,6 @@ public class ManageOrderActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     orders.add(ds.getValue(Order.class));
-                    Log.i("console", ds.getValue(Order.class).getCart_products().toString());
                 }
 
                 adapter = new ManageOrderAdapter(ManageOrderActivity.this, orders);
@@ -65,7 +64,7 @@ public class ManageOrderActivity extends AppCompatActivity {
     }
 
    static public void removedata(Order order) {
-        DatabaseReference rref = FirebaseDatabase.getInstance().getReference().child("owners").child(order.getOwner()).child("customer_order")
+        DatabaseReference rref = FirebaseDatabase.getInstance("https://gruber-6b4f2-default-rtdb.firebaseio.com/").getReference().child("owners").child(order.getOwner()).child("customer_order")
                 .child(order.getUnique_ID());
         rref.removeValue();
     }

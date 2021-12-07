@@ -17,6 +17,9 @@ import com.example.gproject.OnToast;
 import com.example.gproject.R;
 import com.example.gproject.User;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class CreateAccountActivity extends AppCompatActivity{
     public void goBack(View v) {
         onBackPressed();
@@ -61,10 +64,17 @@ public class CreateAccountActivity extends AppCompatActivity{
         String au = cau.getText().toString();
         String ap = cap.getText().toString();
 
+        // regex for email
+        Pattern p = Pattern.compile(".+@.+//..+");
+        Matcher m = p.matcher(ae);
+
         // add regex stuff, if any of these regexes are not satisfied, user is not created
         if(af.equals("") || al.equals("") || ae.equals("") || au.equals("") || ap.equals("")){
             // display message that says "smth cannot be blank"
             displayMessage("Input cannot be blank!");
+        }
+        else if (!m.matches()) {
+            displayMessage("Invalid email!");
         }
         else{
             String type = cs.getSelectedItem().toString().toLowerCase() + "s";
