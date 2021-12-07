@@ -64,18 +64,12 @@ public class CreateAccountActivity extends AppCompatActivity{
         String au = cau.getText().toString();
         String ap = cap.getText().toString();
 
-        // regex for email
-        Pattern p = Pattern.compile("\"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$\"\n");
-        Matcher m = p.matcher(ae);
         //regex for name
         Pattern q = Pattern.compile("\\s*");
         // add regex stuff, if any of these regexes are not satisfied, user is not created
-        if(q.matcher(af).matches() || q.matcher(al).matches() || q.matcher(au).matches() || q.matcher(ap).matches() ){
+        if(q.matcher(af).matches() || q.matcher(al).matches() || q.matcher(au).matches() || q.matcher(ap).matches() || q.matcher(ae).matches() ){
             // display message that says "smth cannot be blank"
             displayMessage("Input cannot be blank!");
-        }
-        else if (!m.matches()) {
-            displayMessage("Invalid email!");
         }
         else{
             String type = cs.getSelectedItem().toString().toLowerCase() + "s";

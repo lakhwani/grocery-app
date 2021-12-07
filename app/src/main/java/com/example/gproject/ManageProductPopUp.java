@@ -42,8 +42,6 @@ public class ManageProductPopUp extends AppCompatActivity {
                 EditText mp = findViewById(R.id.manage_product_pop_up_price);
                 EditText ma = findViewById(R.id.manage_product_pop_up_amt);
 
-                int t = 0;
-
                 try{
                     Product new_product = new Product(Double.parseDouble(mp.getText().toString()), mb.getText().toString(), Integer.parseInt(ma.getText().toString()));
                     DB.addProductToUser(owner_name, new_product, ManageProductPopUp.this);
