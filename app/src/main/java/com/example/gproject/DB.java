@@ -187,6 +187,7 @@ public class DB {
     public static void addOrderToOwner(Order order, CartActivity ca){
         // On the customer side in cart activity, when the purchase button is pressed, an order is
         // sent to the owner in the database
+        if (order.getCart_products() == null)   return;
         DatabaseReference ref = db.getReference().child("owners").child(order.getOwner());
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
