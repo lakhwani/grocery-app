@@ -1,3 +1,5 @@
-# GProject
+# Grüber 🥑
+#### Groceries on the Go
 
-CSCB07 Project
+
+
