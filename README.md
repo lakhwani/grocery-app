@@ -7,6 +7,8 @@ Grüber, groceries on the go. Grüber is an android application that bridges the
 
 <img src="https://user-images.githubusercontent.com/68998300/166720913-fdca55eb-0891-47e6-8f51-a15ac6ef9433.gif" height=400>
 
+  
+
 
 ### 🛍 Customer:
 Customers are able to see all neighbouring grocery stores and create an order directly on the app, that is sent automatically to the store owner to be accepted and delivered. 
