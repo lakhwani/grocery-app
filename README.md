@@ -1,4 +1,4 @@
-# **Grüber 🥑 - A Grocery Delivery App**
+# **Grüber: A Grocery Delivery Mobile App**
 
 ### 🍏 Overview:
 Grüber, groceries on the go. Grüber is an android application that bridges the gap between the shop owner and the customers, providing a pleasant management and shopping experience for local shoppers.
